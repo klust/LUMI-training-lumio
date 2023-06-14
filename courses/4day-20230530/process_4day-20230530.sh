@@ -7,7 +7,7 @@ projectid="465000524"
 # - Add overwrites for lumi_c.sh and lumi_g.sh in exercises/HPE
 overwrite=1
 # - Pack the software subdirectory also (we always sync it but packing is expensive)
-pack_software=0
+pack_software=1
 
 training="${PWD##*/LUMI-training-lumio/courses/}"
 if [[ "$training" == "$PWD" ]]
@@ -91,23 +91,23 @@ fi
 
 if [ -d "exercises/HPE" ]
 then
-    tar -cf exercises_HPE.tar exercises/HPE
+    gtar -cf exercises_HPE.tar exercises/HPE
     if [ "$overwrite" = "1" ]; 
     then
-        tar -rf ../exercises_HPE.tar exercises/HPE
+        gtar -rf ../exercises_HPE.tar exercises/HPE
     fi
     bzip2 -f --keep --best exercises_HPE.tar
 fi
 if [ -d "exercises/AMD" ]
 then
-    tar -cf exercises_AMD.tar exercises/AMD
+    gtar -cf exercises_AMD.tar exercises/AMD
     bzip2 -f --keep --best exercises_AMD.tar
 fi
 if [ "$pack_software" = "1" ]
 then
     if [ -d "software" ]
     then
-        tar -cf software_AMD.tar  software 
+        gtar -cf software_AMD.tar  software 
         bzip2 -f --best software_AMD.tar
     fi
 fi
@@ -118,7 +118,7 @@ then
     demo_scripts="session-4-scripts"
     if [ -d "$demo_scripts" ]
     then
-        tar -cf "$demo_scripts.tar" "$demo_scripts"
+        gtar -cf "$demo_scripts.tar" "$demo_scripts"
         bzip2 -f --keep --best "$demo_scripts.tar"
         touch -r "$demo_scripts" "$demo_scripts.tar"
         touch -r "$demo_scripts" "$demo_scripts.tar.bz2"
