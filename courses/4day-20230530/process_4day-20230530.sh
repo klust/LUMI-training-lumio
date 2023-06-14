@@ -85,6 +85,12 @@ popd
 fi
 
 #
+# Do some clean-up
+#
+pushd exercises/AMD/HPCTrainingExamples/HIP/jacobi ; make clean ; popd
+find . -name "*.swp" -exec /bin/rm -f '{}' \;
+
+#
 # Create some tar files with the exercises and software as these need to be copied
 # by the user anyway.
 #
@@ -94,7 +100,9 @@ then
     gtar -cf exercises_HPE.tar exercises/HPE
     if [ "$overwrite" = "1" ]; 
     then
+        cd overwrite
         gtar -rf ../exercises_HPE.tar exercises/HPE
+        cd ..
     fi
     bzip2 -f --keep --best exercises_HPE.tar
 fi
