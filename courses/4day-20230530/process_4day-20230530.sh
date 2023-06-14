@@ -1,0 +1,232 @@
+#! /usr/bin/env bash
+
+# ID of the training project on LUMI.
+projectid="465000524"
+
+# Additional variables
+# - Add overwrites for lumi_c.sh and lumi_g.sh in exercises/HPE
+overwrite=1
+# - Pack the software subdirectory also (we always sync it but packing is expensive)
+pack_software=0
+
+training="${PWD##*/LUMI-training-lumio/courses/}"
+if [[ "$training" == "$PWD" ]]
+then
+    echo "Failed to find the name of the course."
+    exit
+fi
+
+echo "Processing data for the training '$training' to LUMI-O."
+
+cd ../..
+rootdir="$PWD"
+mkdir -p "work/$training"
+cd       "work/$training"
+
+#
+# First pull in the data from the training project
+#
+
+remoteroot="/project/project_$projectid"
+connection="lumik"
+
+#for subdir in slides exercises
+#for subdir in slides exercises software
+for subdir in slides
+do
+    rsync -aPh --delete -e ssh "$connection:$remoteroot/$subdir/" "$PWD/$subdir"
+done
+
+#
+# Overwrite some scripts (activate only after the course)
+#
+
+if [ "$overwrite" = "1" ]
+then 
+
+mkdir -p overwrite/exercises/HPE
+pushd overwrite/exercises/HPE
+
+cat >lumi_c_after.sh <<-EOF
+# LUMI-C environment (for running after the course)
+# Replace XXXXXXXXX in the line below with the project
+# you want to use for running.
+export SLURM_ACCOUNT=project_XXXXXXXXX
+export SLURM_PARTITION=small
+
+export SBATCH_ACCOUNT=${SLURM_ACCOUNT}
+export SBATCH_PARTITION=${SLURM_PARTITION}
+
+export SALLOC_ACCOUNT=${SLURM_ACCOUNT}
+export SALLOC_PARTITION=${SLURM_PARTITION}
+EOF
+
+cat >lumi_g_after.sh <<-EOF
+# LUMI-G environment (for running after the course)
+# Replace XXXXXXXXX in the line below with the project
+# you want to use for running.
+export SLURM_ACCOUNT=project_XXXXXXXXX
+export SLURM_PARTITION=small-g
+
+export SBATCH_ACCOUNT=${SLURM_ACCOUNT}
+export SBATCH_PARTITION=${SLURM_PARTITION}
+
+export SALLOC_ACCOUNT=${SLURM_ACCOUNT}
+export SALLOC_PARTITION=${SLURM_PARTITION}
+EOF
+
+# Need to set the timestamp of the file as otherwise we'll get
+# a different tar file everytime the script runs.
+touch -r ../../../exercises/HPE/lumi_c.sh lumi_c_after.sh
+touch -r ../../../exercises/HPE/lumi_g.sh lumi_g_after.sh
+
+popd
+
+fi
+
+#
+# Create some tar files with the exercises and software as these need to be copied
+# by the user anyway.
+#
+
+if [ -d "exercises/HPE" ]
+then
+    tar -cf exercises_HPE.tar exercises/HPE
+    if [ "$overwrite" = "1" ]; 
+    then
+        tar -rf ../exercises_HPE.tar exercises/HPE
+    fi
+    bzip2 -f --keep --best exercises_HPE.tar
+fi
+if [ -d "exercises/AMD" ]
+then
+    tar -cf exercises_AMD.tar exercises/AMD
+    bzip2 -f --keep --best exercises_AMD.tar
+fi
+if [ "$pack_software" = "1" ]
+then
+    if [ -d "software" ]
+    then
+        tar -cf software_AMD.tar  software 
+        bzip2 -f --best software_AMD.tar
+    fi
+fi
+
+if [ -d "slides/AMD" ]
+then
+    pushd slides/AMD
+    demo_scripts="session-4-scripts"
+    if [ -d "$demo_scripts" ]
+    then
+        tar -cf "$demo_scripts.tar" "$demo_scripts"
+        bzip2 -f --keep --best "$demo_scripts.tar"
+        touch -r "$demo_scripts" "$demo_scripts.tar"
+        touch -r "$demo_scripts" "$demo_scripts.tar.bz2"
+    fi
+    popd
+fi
+
+###############################################################################
+#
+# Now do the actual copying to the lumi-o preparation directories.
+#
+
+function copy_to_repo {
+
+    # Inmput arguments
+    # - 1: Repo: public or private
+    # - 2: Source file
+    # - 3: Destination file
+
+    repo="$1"
+    source="$2"
+    dest="$3"
+
+    full_source="$rootdir/work/$training/$source"
+    full_dest="$rootdir/$repo/$training/files/$dest"
+
+    if [ -f "$full_source" ]
+    then
+
+        if [ -f "$full_dest" ]
+        then
+
+            md5_source="$(md5sum $full_source | cut -d ' ' -f1)"
+            md5_dest="$(md5sum $full_dest | cut -d ' ' -f1)"
+            #echo "DEBUG: $md5_source $md5_dest."
+
+            if [[ "$md5_source" == "$md5_dest" ]]
+            then
+
+                echo "- No change to $source, not refresing $dest."
+
+            else
+
+                echo "- $source has changed, refreshing $dest."
+                /bin/cp $full_source $full_dest
+
+            fi
+
+        else
+
+            echo "- $dest does not yet exist, copying from $source"
+            /bin/cp $full_source $full_dest
+
+        fi
+
+    else
+        echo "- Source file $source does not (yet) exist"
+    fi
+
+
+} # end function copy_to_repo
+
+#
+# HPE stuff
+#
+
+echo -e "\nProcessing HPE materials..."
+copy_to_repo private "slides/HPE/01_EX_Architecture.pdf"                      "LUMI-$training-1_01_HPE_Cray_EX_Architecuture.pdf"
+copy_to_repo private "slides/HPE/02_PE_and_Modules.pdf"                       "LUMI-$training-1_02_Programming_Environment_and_Modules.pdf"
+copy_to_repo private "slides/HPE/03_Running_Applications_Slurm.pdf"           "LUMI-$training-1_03_Running_Applications.pdf"
+copy_to_repo private "slides/HPE/04_Compilers_and_Programming_Models.pdf"     "LUMI-$training-1_05_Compilers_and_Parallel_Programming_Models.pdf"
+copy_to_repo private "slides/HPE/05_Libraries.pdf"                            "LUMI-$training-1_07_Cray_Scientific_Libraries.pdf"
+copy_to_repo private "slides/HPE/06_Directives_Programming.pdf"               "LUMI-$training-1_09_Offload_CCE.pdf"
+copy_to_repo private "slides/HPE/07_Advanced_Placement.pdf"                   "LUMI-$training-2_03_Advanced_Application_Placement.pdf"
+copy_to_repo private "slides/HPE/08_debugging_at_scale.pdf"                   "LUMI-$training-2_01_Debugging_at_Scale.pdf"
+copy_to_repo private "slides/HPE/09_introduction_to_perftools.pdf"            "LUMI-$training-3_01_Introduction_to_Perftools.pdf"
+copy_to_repo private "slides/HPE/10_advanced_performance_analysis_merged.pdf" "LUMI-$training-3_03_Advanced_Performace_analysis.pdf"
+copy_to_repo private "slides/HPE/11_cray_mpi_MPMD_medium.pdf"                 "LUMI-$training-3_05_Cray_MPI_on_Slingshot.pdf"
+copy_to_repo private "slides/HPE/12_cpu_performance_optimization.pdf"         "LUMI-$training-4_01_Performance_Optimization_Improving_Single_Core.pdf"
+copy_to_repo private "slides/HPE/13_Python_Frameworks.pdf"                    "LUMI-$training-4_02_Introduction_to_Python_on_Cray_EX.pdf"
+copy_to_repo private "slides/HPE/14_IO_medium_LUMI.pdf"                       "LUMI-$training-4_04_IO_Optimization_Parallel_IO.pdf"
+
+copy_to_repo private "slides/HPE/Exercises.pdf"                               "LUMI-$training-Exercises_HPE.pdf"
+copy_to_repo private "exercises_HPE.tar"                                      "LUMI-$training-Exercises_HPE.tar"
+copy_to_repo private "exercises_HPE.tar.bz2"                                  "LUMI-$training-Exercises_HPE.tar.bz2"
+
+#
+# AMD stuff
+#
+
+echo -e "\nProcessing AMD materials..."
+copy_to_repo public "slides/AMD/session-1-intro_hip_programming.pdf"             "LUMI-$training-2_06_Introduction_to_AMD_ROCm_Ecosystem.pdf"
+copy_to_repo public "slides/AMD/session-2-rocgdb-tutorial.pdf"                   "LUMI-$training-3_07_AMD_ROCgdb_Debugger.pdf"
+copy_to_repo public "slides/AMD/session-2-intro_rocprof.pdf"                     "LUMI-$training-3_09_Introduction_to_Rocprof_Profiling_Tool.pdf"
+copy_to_repo public "slides/AMD/session-3-tutorial_omnitools.pdf"                "LUMI-$training-4_06_AMD_Omnitrace.pdf"
+copy_to_repo public "slides/AMD/session-4-ToolsInActionPytorchExample-LUMI.pdf"  "LUMI-$training-4_10_Best_Practices_GPU_Optimization.pdf"
+copy_to_repo public "slides/AMD/session-4-scripts.tar"                           "LUMI-$training-4_10_scripts.tar"
+copy_to_repo public "slides/AMD/session-4-scripts.tar.bz2"                       "LUMI-$training-4_10_scripts.tar.bz2"
+
+copy_to_repo public "exercises_AMD.tar"                                          "LUMI-$training-Exercises_AMD.tar"
+copy_to_repo public "exercises_AMD.tar.bz2"                                      "LUMI-$training-Exercises_AMD.tar.bz2"
+
+copy_to_repo private "software_AMD.tar.bz2"                                      "LUMI-$training-Software_AMD.tar.bz2"
+
+#
+# LUST stuff
+#
+
+echo -e "\nProcessing LUST materials..."
+copy_to_repo public "slides/LUST/LUMI-4day-20230530-software.pdf"    "LUMI-4day-20230530-2_05_software_stacks.pdf"
+copy_to_repo public "slides/LUST/LUMI_Support_Overview_06.2023.pdf"  "LUMI-4day-20230530-4_11_LUMI_Support_and_Documentation.pdf"
