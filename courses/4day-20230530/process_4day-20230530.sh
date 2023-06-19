@@ -30,9 +30,7 @@ cd       "work/$training"
 remoteroot="/project/project_$projectid"
 connection="lumik"
 
-#for subdir in slides exercises
-#for subdir in slides exercises software
-for subdir in slides
+for subdir in slides exercises software
 do
     rsync -aPh --delete -e ssh "$connection:$remoteroot/$subdir/" "$PWD/$subdir"
 done
