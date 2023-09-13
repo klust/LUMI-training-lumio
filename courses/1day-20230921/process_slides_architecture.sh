@@ -5,6 +5,7 @@ slidestack="LUMI-1day-202310XX-01-architecture"
 
 slidealias=( \
     "Title" \
+    "WhyKnow" \
     "LUMIIs" \
     "LUMISpecs" \
     "AMDMilanCCD" \
