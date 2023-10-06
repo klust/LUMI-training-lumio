@@ -88,6 +88,20 @@ touch -r ../../../$EXERCISES/HPE/lumi_g.sh lumi_g_after.sh
 
 popd
 
+mkdir -p overwrite/$EXERCISES/HPE/day4
+pushd overwrite/$EXERCISES/HPE/day4
+
+gtar -xf ../../../../$EXERICSES/HPE/day4/VH1-io.tar
+sed -e 's/-s \${STRIPE_SIZE}/-S \${STRIPE_SIZE}/' -i VH1-io/README
+gtar -cf VH1-io.tar VH1-io
+/bin/rm -rf VH1-io
+
+# Need to set the timestamp of the file as otherwise we'll get
+# a different tar file everytime the script runs.
+touch -r ../../../$EXERCISES/HPE/day4/VH1-io.tar VH1-io.sh
+
+popd
+
 fi
 
 #
@@ -117,12 +131,14 @@ then
             gtar -rf ../exercises_HPE.tar $EXERCISES/HPE
             cd ..
         fi
+        # Compress but use --keep to preserve the input file also
         bzip2 -f --keep --best exercises_HPE.tar
     fi
     if [ -d "$EXERCISES/AMD" ]
     then
         echo -e "\nCreating tar-file with AMD exercises..."
         gtar -cf exercises_AMD.tar $EXERCISES/AMD
+        # Compress but use --keep to preserve the input file also
         bzip2 -f --keep --best exercises_AMD.tar
     fi
 fi
@@ -214,9 +230,10 @@ function copy_to_repo {
 
 echo -e "\nProcessing HPE materials..."
 copy_to_repo public  "$EXERCISES/HPE/day1/ProgrammingModels/ProgrammingModelExamples_SLURM.pdf"  "LUMI-$training-1_04a-ProgrammingModelExamples_SLURM.pdf"
-copy_to_repo public  "$SLIDES/HPE/Exercises-Day1.pdf"                          "LUMI-$training-1_Exercises_day1.pdf"
-copy_to_repo public  "$SLIDES/HPE/Exercises-Day2.pdf"                          "LUMI-$training-2_Exercises_day2.pdf"
-copy_to_repo public  "$SLIDES/HPE/Exercises-Day3.pdf"                          "LUMI-$training-3_Exercises_day3.pdf"
+#copy_to_repo public  "$SLIDES/HPE/Exercises-Day1.pdf"                          "LUMI-$training-1_Exercises_day1.pdf"
+#copy_to_repo public  "$SLIDES/HPE/Exercises-Day2.pdf"                          "LUMI-$training-2_Exercises_day2.pdf"
+#copy_to_repo public  "$SLIDES/HPE/Exercises-Day3.pdf"                          "LUMI-$training-3_Exercises_day3.pdf"
+copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-4_Exercises_day4.pdf"
 copy_to_repo private "$SLIDES/HPE/01_EX_Architecture.pdf"                      "LUMI-$training-1_01_HPE_Cray_EX_Architecuture.pdf"
 copy_to_repo private "$SLIDES/HPE/02_PE_and_Modules.pdf"                       "LUMI-$training-1_02_Programming_Environment_and_Modules.pdf"
 copy_to_repo private "$SLIDES/HPE/03_Running_Applications_Slurm.pdf"           "LUMI-$training-1_03_Running_Applications.pdf"
@@ -228,8 +245,8 @@ copy_to_repo private "$SLIDES/HPE/08_debugging_at_scale.pdf"                   "
 copy_to_repo private "$SLIDES/HPE/09_introduction_to_perftools.pdf"            "LUMI-$training-3_01_Introduction_to_Perftools.pdf"
 copy_to_repo private "$SLIDES/HPE/10_advanced_performance_analysis_merged.pdf" "LUMI-$training-3_03_Advanced_Performace_analysis.pdf"
 copy_to_repo private "$SLIDES/HPE/11_cray_mpi_MPMD_medium.pdf"                 "LUMI-$training-3_05_Cray_MPI_on_Slingshot.pdf"
-copy_to_repo private "$SLIDES/HPE/12_cpu_performance_optimization.pdf"         "LUMI-$training-4_01_Performance_Optimization_Improving_Single_Core.pdf"
-copy_to_repo private "$SLIDES/HPE/13_Python_Frameworks.pdf"                    "LUMI-$training-4_03_Introduction_to_Python_on_Cray_EX.pdf"
+copy_to_repo private "$SLIDES/HPE/12_Python_Frameworks.pdf"                    "LUMI-$training-4_01_Introduction_to_Python_on_Cray_EX.pdf"
+copy_to_repo private "$SLIDES/HPE/13_cpu_performance_optimization.pdf"         "LUMI-$training-4_02_Performance_Optimization_Improving_Single_Core.pdf"
 copy_to_repo private "$SLIDES/HPE/14_IO_medium_LUMI.pdf"                       "LUMI-$training-4_04_IO_Optimization_Parallel_IO.pdf"
 
 copy_to_repo private "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-Exercises_HPE.pdf"
