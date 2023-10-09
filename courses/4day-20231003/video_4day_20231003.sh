@@ -83,8 +83,8 @@ copy_to_repo private 3_01_Introduction_to_Perftools
 copy_to_repo private 3_03_Advanced_Performance_Analysis
 copy_to_repo private 3_05_Cray_MPI_on_Slingshot
 
-copy_to_repo private  4_01_Performance_Optimization_Improving_Single_Core
-copy_to_repo private 4_03_Introduction_to_Python_on_Cray_EX
+copy_to_repo private 4_01_Introduction_to_Python_on_Cray_EX
+copy_to_repo private 4_02_Performance_Optimization_Improving_Single_Core
 copy_to_repo private 4_04_IO_Optimization_Parallel_IO
 
 #
@@ -93,17 +93,17 @@ copy_to_repo private 4_04_IO_Optimization_Parallel_IO
 
 echo -e "\nProcessing AMD materials..."
 copy_to_repo public 2_06_Introduction_to_AMD_ROCm_Ecosystem
-copy_to_repo public  3_07_AMD_ROCgdb_Debugger
-copy_to_repo public  3_09_Introduction_to_Rocprof_Profiling_Tool
-copy_to_repo public  4_06_AMD_Ominitrace
-copy_to_repo public  4_08_AMD_Ominiperf
-copy_to_repo public  4_10_Best_Practices_GPU_Optimization
+copy_to_repo public 3_07_AMD_ROCgdb_Debugger
+copy_to_repo public 3_09_Introduction_to_Rocprof_Profiling_Tool
+copy_to_repo public 4_06_AMD_Ominitrace
+copy_to_repo public 4_08_AMD_Ominiperf
+copy_to_repo public 4_10_Best_Practices_GPU_Optimization
 
 #
 # LUST stuff
 #
 
 echo -e "\nProcessing LUST materials..."
-copy_to_repo public  1_00_Introduction.mp4
+copy_to_repo public 1_00_Introduction.mp4
 copy_to_repo public 2_05_LUMI_Software_Stacks
-copy_to_repo public  4_11_LUMI_Support_and_Documentation
+copy_to_repo public 4_11_LUMI_Support_and_Documentation

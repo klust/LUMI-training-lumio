@@ -12,8 +12,6 @@ EXERCISES="Exercises"
 overwrite=0
 # - Pack the exercises in a tar file for HPE and one for AMD
 pack_exercises=0
-# - Pack the software subdirectory also (we always sync it but packing is expensive)
-pack_software=0
 
 training="${PWD##*/LUMI-training-lumio/courses/}"
 if [[ "$training" == "$PWD" ]]
@@ -36,7 +34,7 @@ cd       "work/$training"
 remoteroot="/project/project_$projectid"
 connection="lumik"
 
-for subdir in $SLIDES $EXERCISES software
+for subdir in $SLIDES $EXERCISES
 do
     rsync -aPh --delete --exclude '.git' -e ssh "$connection:$remoteroot/$subdir/" "$PWD/$subdir"
 done
@@ -140,15 +138,6 @@ then
         gtar -cf exercises_AMD.tar $EXERCISES/AMD
         # Compress but use --keep to preserve the input file also
         bzip2 -f --keep --best exercises_AMD.tar
-    fi
-fi
-if [ "$pack_software" = "1" ]
-then
-    if [ -d "software" ]
-    then
-        echo -e "\nCreating tar-file with AMD software..."
-        gtar -cf software_AMD.tar  software 
-        bzip2 -f --best software_AMD.tar
     fi
 fi
 
@@ -267,8 +256,6 @@ copy_to_repo public "$SLIDES/AMD/session-6-scripts.tar.bz2"                     
 
 copy_to_repo public "exercises_AMD.tar"                                          "LUMI-$training-Exercises_AMD.tar"
 copy_to_repo public "exercises_AMD.tar.bz2"                                      "LUMI-$training-Exercises_AMD.tar.bz2"
-
-copy_to_repo private "software_AMD.tar.bz2"                                      "LUMI-$training-Software_AMD.tar.bz2"
 
 #
 # LUST stuff
