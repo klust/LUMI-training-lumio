@@ -152,19 +152,17 @@ then
     fi
 fi
 
-if [ -d "$SLIDES/AMD" ]
+if [ -d "$EXERCISES/AMD/Pytorch" ]
 then
     echo -e "\nCreating tar-file with AMD demo scripts..."
 
-    pushd $SLIDES/AMD
+    mkdir -p $SLIDES/AMD
+    pushd $EXERCISES/AMD
     demo_scripts="session-6-scripts"
-    if [ -d "$demo_scripts" ]
-    then
-        gtar -cf "$demo_scripts.tar" "$demo_scripts"
-        bzip2 -f --keep --best "$demo_scripts.tar"
-        touch -r "$demo_scripts" "$demo_scripts.tar"
-        touch -r "$demo_scripts" "$demo_scripts.tar.bz2"
-    fi
+    gtar -cf "../../$SLIDES/AMD/$demo_scripts.tar" Pytorch
+    bzip2 -f --keep --best "../../$SLIDES/AMD/$demo_scripts.tar"
+    touch -r Pytorch "../../$SLIDES/AMD/$demo_scripts.tar"
+    touch -r Pytorch "../../$SLIDES/AMD/$demo_scripts.tar.bz2"
     popd
 fi
 
@@ -261,11 +259,11 @@ echo -e "\nProcessing AMD materials..."
 copy_to_repo public "$SLIDES/AMD/session-1-hip_intro.pdf"                         "LUMI-$training-2_06_Introduction_to_AMD_ROCm_Ecosystem.pdf"
 copy_to_repo public "$SLIDES/AMD/session-2-rocgdb-tutorial.pdf"                   "LUMI-$training-3_07_AMD_ROCgdb_Debugger.pdf"
 copy_to_repo public "$SLIDES/AMD/session-3-introduction-to-rocprof.pdf"           "LUMI-$training-3_09_Introduction_to_Rocprof_Profiling_Tool.pdf"
-#copy_to_repo public "$SLIDES/AMD/session-4-introduction-to-omnitrace.pdf"         "LUMI-$training-3_09_Introduction_to_Rocprof_Profiling_Tool.pdf"
-#copy_to_repo public "$SLIDES/AMD/session-5-tutorial_omniperf.pdf"                 "LUMI-$training-3_09_Introduction_to_Rocprof_Profiling_Tool.pdf"
-#copy_to_repo public "$SLIDES/AMD/session-6-ToolsInActionPytorchExample-LUMI.pdf"  "LUMI-$training-4_10_Best_Practices_GPU_Optimization.pdf"
-#copy_to_repo public "$SLIDES/AMD/session-6-scripts.tar"                           "LUMI-$training-4_10_scripts.tar"
-#copy_to_repo public "$SLIDES/AMD/session-6-scripts.tar.bz2"                       "LUMI-$training-4_10_scripts.tar.bz2"
+copy_to_repo public "$SLIDES/AMD/session-4-introduction-to-omnitrace.pdf"         "LUMI-$training-4_06_AMD_Omnitrace.pdf"
+copy_to_repo public "$SLIDES/AMD/session-5-tutorial_omniperf.pdf"                 "LUMI-$training-4_08_AMD_Omniperf.pdf"
+copy_to_repo public "$SLIDES/AMD/session-6-ToolsInActionPytorchExample-LUMI.pdf"  "LUMI-$training-4_10_Best_Practices_GPU_Optimization.pdf"
+copy_to_repo public "$SLIDES/AMD/session-6-scripts.tar"                           "LUMI-$training-4_10_scripts.tar"
+copy_to_repo public "$SLIDES/AMD/session-6-scripts.tar.bz2"                       "LUMI-$training-4_10_scripts.tar.bz2"
 
 copy_to_repo public "exercises_AMD.tar"                                          "LUMI-$training-Exercises_AMD.tar"
 copy_to_repo public "exercises_AMD.tar.bz2"                                      "LUMI-$training-Exercises_AMD.tar.bz2"
@@ -277,5 +275,5 @@ copy_to_repo private "software_AMD.tar.bz2"                                     
 #
 
 echo -e "\nProcessing LUST materials..."
-copy_to_repo public "$SLIDES/LUST/LUMI-4day-20231003-software.pdf"    "LUMI-4day-20230530-2_05_software_stacks.pdf"
-copy_to_repo public "$SLIDES/LUST/LUMI_Support_Overview_06.2023.pdf"  "LUMI-4day-20230530-4_11_LUMI_Support_and_Documentation.pdf"
+copy_to_repo public "$SLIDES/LUST/LUMI-4day-20231003-software.pdf"                             "LUMI-4day-20231003-2_05_software_stacks.pdf"
+copy_to_repo public "$SLIDES/LUST/LUMI-4day-20231003-4_11_LUMI_Support_and_Documentation.pdf"  "LUMI-4day-20231003-4_11_LUMI_Support_and_Documentation.pdf"
