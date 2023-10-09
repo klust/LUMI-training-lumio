@@ -7,7 +7,12 @@ then
     exit
 fi
 
-videodir='/Users/klust/Projects/LUMI-Videoprocessing/$training/Rendered'
+videodir="/Users/klust/Projects/LUMI-Videoprocessing/$training/Rendered"
+
+curdir=$PWD
+cd ../..
+rootdir=$PWD
+cd $curdir
 
 ###############################################################################
 #
@@ -16,17 +21,16 @@ videodir='/Users/klust/Projects/LUMI-Videoprocessing/$training/Rendered'
 
 function copy_to_repo {
 
-    # Inmput arguments
+    # Input arguments
     # - 1: Repo: public or private
     # - 2: Video file
-    # - 3: Destination file
 
     repo="$1"
     video="$2"
-    dest="$3"
 
     full_source="$videodir/$video.mp4"
-    full_dest="$rootdir/$repo/$training/files/$video.mp4"
+    full_dest_dir="$rootdir/$repo/$training/recordings"
+    full_dest="$full_dest_dir/$video.mp4"
 
     if [ -f "$full_source" ]
     then
@@ -41,24 +45,27 @@ function copy_to_repo {
             if [[ "$md5_source" == "$md5_dest" ]]
             then
 
-                echo "- No change to $source, not refresing $dest."
+                echo "- No change to $full_source, not refresing $full_dest."
 
             else
 
-                echo "- $source has changed, refreshing $dest."
+                echo "- $full_source has changed, refreshing $full_dest."
                 /bin/cp $full_source $full_dest
 
             fi
 
         else
 
-            echo "- $dest does not yet exist, copying from $source"
-            /bin/cp $full_source $full_dest
+            echo "- $full_dest does not yet exist, copying from $full_source"
+            /bin/mkdir -p "$full_dest_dir"
+            /bin/cp "$full_source" "$full_dest"
 
         fi
 
     else
-        echo "- Source file $source does not (yet) exist"
+
+        echo "- Source file $full_source does not (yet) exist"
+
     fi
 
 
@@ -95,8 +102,8 @@ echo -e "\nProcessing AMD materials..."
 copy_to_repo public 2_06_Introduction_to_AMD_ROCm_Ecosystem
 copy_to_repo public 3_07_AMD_ROCgdb_Debugger
 copy_to_repo public 3_09_Introduction_to_Rocprof_Profiling_Tool
-copy_to_repo public 4_06_AMD_Ominitrace
-copy_to_repo public 4_08_AMD_Ominiperf
+copy_to_repo public 4_06_AMD_Omnitrace
+copy_to_repo public 4_08_AMD_Omniperf
 copy_to_repo public 4_10_Best_Practices_GPU_Optimization
 
 #
