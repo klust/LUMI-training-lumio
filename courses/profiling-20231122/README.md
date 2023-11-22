@@ -1,1 +1,1 @@
-# Training materials pre-hackaton profiling course November 22, 2023
+# Training materials pre-hackathon profiling course November 22, 2023
