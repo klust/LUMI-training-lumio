@@ -111,6 +111,6 @@ copy_to_repo public 4_10_Best_Practices_GPU_Optimization
 #
 
 echo -e "\nProcessing LUST materials..."
-copy_to_repo public 1_00_Introduction.mp4
+copy_to_repo public 1_00_Introduction
 copy_to_repo public 2_05_LUMI_Software_Stacks
 copy_to_repo public 4_11_LUMI_Support_and_Documentation
