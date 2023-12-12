@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Some variables.
-slidestack="LUMI-1day-20230921-02-CPE"
+slidestack="LUMI-1day-20240208-02-CPE"
 
 slidealias=( \
     "Title" \
@@ -22,6 +22,7 @@ slidealias=( \
     "OtherModules" \
     "WarningLibraryPath" \
     "WarningOrderMatters" \
+    "NoteWrappers" \
 )
 
 #
