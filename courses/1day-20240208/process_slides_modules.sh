@@ -26,13 +26,9 @@ slidealias=( \
     "ModuleSpiderExtensions" \
     "ModuleSpiderCMake" \
     "ModuleSpiderCMakeVersion_1" \
-    "ModuleSpiderCMakeVersion_2" \
     "ModuleKeyword" \
     "ModuleKeywordHTTPS_1" \
     "ModuleKeywordHTTPS_2" \
-    "ModuleKeywordHTTPS_3" \
-    "ModuleKeywordHTTPS_4" \
-    "ModuleKeywordHTTPS_5" \
     "StickyModules" \
     "ModuleAvail_1" \
     "ModuleAvail_2" \
@@ -40,6 +36,7 @@ slidealias=( \
     "ModuleAvail_4" \
     "ModuleAvail_5" \
     "ModuleAvail_6" \
+    "ModuleAvail_7" \
     "ChangingDisplayStyle" \
     "GettingHelp" \
     "NoteCaching" \
