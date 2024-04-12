@@ -2,14 +2,14 @@
 
 ## Scripts
 
-<!-- 
--   `process_slides_software.sh`: Change the names of the exported slides (PNG 1920x1080) 
-    in `public/4day-20231003/img/LUMI-4day-20231003-software` from `DiaXX.png` to the names
+-   `prepare_software.sh`: Commands to execute on LUMI to install some software used
+    during the course in the course training archive project (`/appl/local/training`).
+
+-   `proces_slides_*.sh`: Change the names of the exported slides (PNG 1920x1080) 
+    in `public/2day-20240502/img/LUMI-2day-20240502-*` from `DiaXX.png` to the names
     used in the notes markdown document.
 
--   `process_4day_20231003.sh`: Download the files in the course project on LUMI to a work
-    directory and build the structure for LUMI-O from them, then push to LUIMI-O.
-
--   `video_4day_20231003.sh`: Get the videos from the video processing directory on my local
+<!-- 
+-   `video_4day_20240502.sh`: Get the videos from the video processing directory on my local
     computer and put them in the right place for pushing to LUMI-O.
 -->
