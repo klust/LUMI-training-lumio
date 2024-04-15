@@ -6,7 +6,6 @@ slidestack="LUMI-2day-20240502-10-support"
 slidealias=( \
     "Title" \
     "DistributedNature1" \
-    "DistributedNature2" \
     "L0Training" \
     "L0ReadTheDocs1" \
     "L0ReadTheDocs2" \
@@ -25,6 +24,7 @@ slidealias=( \
     "HelpdeskCanCannot1" \
     "HelpdeskCanCannot2" \
     "HelpdeskCanCannot3" \
+    "HelpdeskCanCannot4" \
 )
 
 #
