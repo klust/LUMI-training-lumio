@@ -26,15 +26,15 @@ slidealias=( \
     "EasyBuildGROMACSSearch_1" \
     "EasyBuildGROMACSSearch_2" \
     "EasyBuildInstallingStep3_partial_2" \
-    "EasyBuildGROMACS_01" \
-    "EasyBuildGROMACS_02" \
+    "EasyBuildGROMACSDep_01" \
+    "EasyBuildGROMACSDep_02" \
     "EasyBuildInstallingStep3_partial_3" \
-    "EasyBuildGROMACS_03" \
-    "EasyBuildGROMACS_04" \
-    "EasyBuildGROMACS_05" \
-    "EasyBuildGROMACS_06" \
-    "EasyBuildGROMACS_07" \
-    "EasyBuildGROMACS_08" \
+    "EasyBuildGROMACSInst_01" \
+    "EasyBuildGROMACSInst_02" \
+    "EasyBuildGROMACSInst_03" \
+    "EasyBuildGROMACSInst_04" \
+    "EasyBuildGROMACSInst_05" \
+    "EasyBuildGROMACSInst_06" \
     "EasyBuildInstallingStep3" \
     "EasyBuildInstallingStep3Note" \
     "EasyBuildAdvanced_1" \
