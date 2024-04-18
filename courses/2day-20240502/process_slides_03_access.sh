@@ -9,8 +9,9 @@ slidealias=( \
     "ProjectsUsers_1" \
     "ProjectsUsers_2" \
     "ProjectManagement" \
-    "FileSpaces_1" \
-    "FileSpaces_2" \
+    "FileSpacesUser" \
+    "FileSpacesProject" \
+    "FileSpacesFurtherInfo" \
     "Access" \
     "OpenOnDemand_01" \
     "OpenOnDemand_02" \

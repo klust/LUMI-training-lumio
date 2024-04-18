@@ -21,18 +21,21 @@ slidealias=( \
     "EasyBuildInstallingStep1 "\
     "EasyBuildInstallingStep2_1" \
     "EasyBuildInstallingStep2_2" \
-    "EasyBuildInstallingStep3" \
+    "EasyBuildInstallingStep3_partial_1" \
     "EasyBuildGROMACSSoftLib" \
     "EasyBuildGROMACSSearch_1" \
     "EasyBuildGROMACSSearch_2" \
+    "EasyBuildInstallingStep3_partial_2" \
     "EasyBuildGROMACS_01" \
     "EasyBuildGROMACS_02" \
+    "EasyBuildInstallingStep3_partial_3" \
     "EasyBuildGROMACS_03" \
     "EasyBuildGROMACS_04" \
     "EasyBuildGROMACS_05" \
     "EasyBuildGROMACS_06" \
     "EasyBuildGROMACS_07" \
     "EasyBuildGROMACS_08" \
+    "EasyBuildInstallingStep3" \
     "EasyBuildInstallingStep3Note" \
     "EasyBuildAdvanced_1" \
     "EasyBuildAdvanced_2" \
