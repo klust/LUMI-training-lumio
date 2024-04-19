@@ -17,7 +17,8 @@ slidealias=( \
     "LustreManageStriping2" \
     "LustreManageStriping3" \
     "LustreManageStriping4" \
-    "LustreMDS" \
+    "LustreMDS_1" \
+    "LustreMDS_2" \
     "LumiLustreOnLumi" \
     "LumiStorageAreas" \
     "LumiObjectStorage" \
