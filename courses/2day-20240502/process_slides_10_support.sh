@@ -9,6 +9,9 @@ slidealias=( \
     "L0Training" \
     "L0ReadTheDocs1" \
     "L0ReadTheDocs2" \
+    "L0ReadTheDocs3" \
+    "L0ReadTheDocs4" \
+    "L0ReadTheDocs5" \
     "L0Colleagues" \
     "LUST1" \
     "LUST2" \
