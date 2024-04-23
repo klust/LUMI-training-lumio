@@ -12,6 +12,7 @@ slidealias=( \
     "L0ReadTheDocs3" \
     "L0ReadTheDocs4" \
     "L0ReadTheDocs5" \
+    "L0CheckStatus" \
     "L0Colleagues" \
     "LUST1" \
     "LUST2" \
