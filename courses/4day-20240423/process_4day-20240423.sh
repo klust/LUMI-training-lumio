@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # ID of the training project on LUMI.
-projectid="465000644"
+projectid="465001098"
 
 # Subdirectories as these have not been consistent across courses
 SLIDES="Slides"
@@ -220,7 +220,7 @@ copy_to_repo public  "$EXERCISES/HPE/day1/ProgrammingModels/ProgrammingModelExam
 #copy_to_repo public  "$SLIDES/HPE/Exercises-Day1.pdf"                          "LUMI-$training-1_Exercises_day1.pdf"
 #copy_to_repo public  "$SLIDES/HPE/Exercises-Day2.pdf"                          "LUMI-$training-2_Exercises_day2.pdf"
 #copy_to_repo public  "$SLIDES/HPE/Exercises-Day3.pdf"                          "LUMI-$training-3_Exercises_day3.pdf"
-copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-4_Exercises_day4.pdf"
+copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-1_Exercises_day1.pdf"
 copy_to_repo private "$SLIDES/HPE/01_EX_Architecture.pdf"                      "LUMI-$training-1_01_HPE_Cray_EX_Architecuture.pdf"
 copy_to_repo private "$SLIDES/HPE/02_PE_and_Modules.pdf"                       "LUMI-$training-1_02_Programming_Environment_and_Modules.pdf"
 copy_to_repo private "$SLIDES/HPE/03_Running_Applications_Slurm.pdf"           "LUMI-$training-1_03_Running_Applications.pdf"
@@ -261,6 +261,6 @@ copy_to_repo public "exercises_AMD.tar.bz2"                                     
 # LUST stuff
 #
 
-echo -e "\nProcessing LUST materials..."
-copy_to_repo public "$SLIDES/LUST/LUMI-4day-20231003-software.pdf"                             "LUMI-4day-20231003-2_05_software_stacks.pdf"
-copy_to_repo public "$SLIDES/LUST/LUMI-4day-20231003-4_11_LUMI_Support_and_Documentation.pdf"  "LUMI-4day-20231003-4_11_LUMI_Support_and_Documentation.pdf"
+#echo -e "\nProcessing LUST materials..."
+#copy_to_repo public "$SLIDES/LUST/LUMI-4day-20240423-software.pdf"                             "LUMI-4day-20231003-2_05_software_stacks.pdf"
+#copy_to_repo public "$SLIDES/LUST/LUMI-4day-20240423-support.pdf"
