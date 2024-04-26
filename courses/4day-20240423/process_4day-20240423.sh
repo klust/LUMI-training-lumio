@@ -187,7 +187,7 @@ function copy_to_repo {
             if [[ "$md5_source" == "$md5_dest" ]]
             then
 
-                echo "- No change to $source, not refresing $dest."
+                echo "- No change to $source, not refreshing $dest."
 
             else
 
@@ -219,8 +219,8 @@ echo -e "\nProcessing HPE materials..."
 copy_to_repo public  "$EXERCISES/HPE/day1/ProgrammingModels/ProgrammingModelExamples_SLURM.pdf"  "LUMI-$training-1_04a-ProgrammingModelExamples_SLURM.pdf"
 #copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-1_Exercises_day1.pdf"
 #copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-2_Exercises_day2.pdf"
-copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-3_Exercises_day3.pdf"
-#copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-4_Exercises_day4.pdf"
+#copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-3_Exercises_day3.pdf"
+copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-4_Exercises_day4.pdf"
 copy_to_repo private "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-Exercises_HPE.pdf"
 copy_to_repo private "$SLIDES/HPE/01_EX_Architecture.pdf"                      "LUMI-$training-1_01_HPE_Cray_EX_Architecuture.pdf"
 copy_to_repo private "$SLIDES/HPE/02_PE_and_Modules.pdf"                       "LUMI-$training-1_02_Programming_Environment_and_Modules.pdf"
@@ -233,9 +233,10 @@ copy_to_repo private "$SLIDES/HPE/08_Advanced_Placement.pdf"                   "
 copy_to_repo private "$SLIDES/HPE/09_introduction_to_perftools.pdf"            "LUMI-$training-3_01_Introduction_to_Perftools.pdf"
 copy_to_repo private "$SLIDES/HPE/10_advanced_performance_analysis_merged.pdf" "LUMI-$training-3_03_Advanced_Performance_analysis.pdf"
 copy_to_repo private "$SLIDES/HPE/11_cray_mpi_MPMD_medium.pdf"                 "LUMI-$training-3_05_Cray_MPI_on_Slingshot.pdf"
-copy_to_repo private "$SLIDES/HPE/12_Python_Frameworks.pdf"                    "LUMI-$training-4_01_Introduction_to_Python_on_Cray_EX.pdf"
-copy_to_repo private "$SLIDES/HPE/13_cpu_performance_optimization.pdf"         "LUMI-$training-4_02_Performance_Optimization_Improving_Single_Core.pdf"
-copy_to_repo private "$SLIDES/HPE/14_IO_medium_LUMI.pdf"                       "LUMI-$training-4_04_IO_Optimization_Parallel_IO.pdf"
+copy_to_repo private "$SLIDES/HPE/12_Python_Frameworks__GPU_porting.pdf"       "LUMI-$training-4_01_Introduction_to_Python_on_Cray_EX.pdf"
+copy_to_repo private "$SLIDES/HPE/12_Python_Frameworks__GPU_porting.pdf"       "LUMI-$training-4_02_Porting_to_GPU.pdf"
+copy_to_repo private "$SLIDES/HPE/13_cpu_performance_optimization.pdf"         "LUMI-$training-4_03_Performance_Optimization_Improving_Single_Core.pdf"
+copy_to_repo private "$SLIDES/HPE/14_IO_medium_LUMI.pdf"                       "LUMI-$training-4_05_IO_Optimization_Parallel_IO.pdf"
 
 copy_to_repo private "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-Exercises_HPE.pdf"
 copy_to_repo private "exercises_HPE.tar"                                      "LUMI-$training-Exercises_HPE.tar"
@@ -249,7 +250,7 @@ echo -e "\nProcessing AMD materials..."
 copy_to_repo public "$SLIDES/AMD/session-1-hip_intro.pdf"                         "LUMI-$training-2_01_Introduction_to_AMD_ROCm_Ecosystem.pdf"
 copy_to_repo public "$SLIDES/AMD/session-2-rocgdb-tutorial.pdf"                   "LUMI-$training-3_07_AMD_ROCgdb_Debugger.pdf"
 copy_to_repo public "$SLIDES/AMD/session-3-introduction-to-rocprof.pdf"           "LUMI-$training-3_09_Introduction_to_Rocprof_Profiling_Tool.pdf"
-copy_to_repo public "$SLIDES/AMD/session-4-introduction-to-omnitrace.pdf"         "LUMI-$training-4_06_AMD_Omnitrace.pdf"
+copy_to_repo public "$SLIDES/AMD/session-4-introduction-to-omnitrace.pdf"         "LUMI-$training-4_07_AMD_Omnitrace.pdf"
 copy_to_repo public "$SLIDES/AMD/session-5-tutorial_omniperf.pdf"                 "LUMI-$training-4_08_AMD_Omniperf.pdf"
 copy_to_repo public "$SLIDES/AMD/session-6-ToolsInActionPytorchExample-LUMI.pdf"  "LUMI-$training-4_10_Best_Practices_GPU_Optimization.pdf"
 copy_to_repo public "$SLIDES/AMD/session-6-scripts.tar"                           "LUMI-$training-4_10_scripts.tar"
