@@ -11,7 +11,7 @@ EXERCISES="Exercises"
 # - Add overwrites for lumi_c.sh and lumi_g.sh in exercises/HPE
 overwrite=0
 # - Pack the exercises in a tar file for HPE and one for AMD
-pack_exercises=0
+pack_exercises=
 
 training="${PWD##*/LUMI-training-lumio/courses/}"
 if [[ "$training" == "$PWD" ]]
@@ -220,7 +220,7 @@ copy_to_repo public  "$EXERCISES/HPE/day1/ProgrammingModels/ProgrammingModelExam
 #copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-1_Exercises_day1.pdf"
 #copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-2_Exercises_day2.pdf"
 #copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-3_Exercises_day3.pdf"
-copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-4_Exercises_day4.pdf"
+#copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-4_Exercises_day4.pdf"
 copy_to_repo private "$SLIDES/HPE/Exercises.pdf"                               "LUMI-$training-Exercises_HPE.pdf"
 copy_to_repo private "$SLIDES/HPE/01_EX_Architecture.pdf"                      "LUMI-$training-1_01_HPE_Cray_EX_Architecuture.pdf"
 copy_to_repo private "$SLIDES/HPE/02_PE_and_Modules.pdf"                       "LUMI-$training-1_02_Programming_Environment_and_Modules.pdf"
@@ -233,8 +233,8 @@ copy_to_repo private "$SLIDES/HPE/08_Advanced_Placement.pdf"                   "
 copy_to_repo private "$SLIDES/HPE/09_introduction_to_perftools.pdf"            "LUMI-$training-3_01_Introduction_to_Perftools.pdf"
 copy_to_repo private "$SLIDES/HPE/10_advanced_performance_analysis_merged.pdf" "LUMI-$training-3_03_Advanced_Performance_analysis.pdf"
 copy_to_repo private "$SLIDES/HPE/11_cray_mpi_MPMD_medium.pdf"                 "LUMI-$training-3_05_Cray_MPI_on_Slingshot.pdf"
-copy_to_repo private "$SLIDES/HPE/12_Python_Frameworks__GPU_porting.pdf"       "LUMI-$training-4_01_Introduction_to_Python_on_Cray_EX.pdf"
-copy_to_repo private "$SLIDES/HPE/12_Python_Frameworks__GPU_porting.pdf"       "LUMI-$training-4_02_Porting_to_GPU.pdf"
+#copy_to_repo private "$SLIDES/HPE/12_Python_Frameworks__GPU_porting.pdf"       "LUMI-$training-4_01_Introduction_to_Python_on_Cray_EX.pdf"
+#copy_to_repo private "$SLIDES/HPE/12_Python_Frameworks__GPU_porting.pdf"       "LUMI-$training-4_02_Porting_to_GPU.pdf"
 copy_to_repo private "$SLIDES/HPE/13_cpu_performance_optimization.pdf"         "LUMI-$training-4_03_Performance_Optimization_Improving_Single_Core.pdf"
 copy_to_repo private "$SLIDES/HPE/14_IO_medium_LUMI.pdf"                       "LUMI-$training-4_05_IO_Optimization_Parallel_IO.pdf"
 
