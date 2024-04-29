@@ -19,6 +19,7 @@ slidealias=( \
     "Slingshot" \
     "AssemblyEX" \
     "AssemblyLUMI" \
+    "Questions" \
 )
 
 #

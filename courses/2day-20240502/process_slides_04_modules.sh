@@ -40,6 +40,7 @@ slidealias=( \
     "GettingHelp" \
     "NoteCaching" \
     "NoteOtherCommands" \
+    "Questions" \
 )
 
 #

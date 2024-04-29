@@ -25,6 +25,7 @@ slidealias=( \
     "WarningLibraryPath" \
     "WarningOrderMatters" \
     "NoteWrappers" \
+    "Questions" \
 )
 
 #

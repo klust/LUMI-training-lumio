@@ -36,6 +36,7 @@ slidealias=( \
     "ROCRMechanismGreenRing2" \
     "ROCRMechanismGreenRing3" \
     "ROCRMechanismAllocateByResource" \
+    "Questions" \
 )
 
 #

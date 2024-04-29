@@ -35,6 +35,7 @@ slidealias=( \
     "LUMIOCredentialsWeb_07" \
     "LUMIOConfiguringTools" \
     "LUMIORclone" \
+    "Questions" \
 )
 
 #

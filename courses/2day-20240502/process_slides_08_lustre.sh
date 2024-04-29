@@ -22,6 +22,7 @@ slidealias=( \
     "LumiLustreOnLumi" \
     "LumiStorageAreas" \
     "LumiObjectStorage" \
+    "Questions" \
 )
 
 #
