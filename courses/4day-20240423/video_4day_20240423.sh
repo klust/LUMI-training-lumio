@@ -7,7 +7,8 @@ then
     exit
 fi
 
-videodir="/Users/klust/Projects/LUMI-Videoprocessing/$training/Rendered"
+#videodir="/Users/klust/Projects/LUMI-Videoprocessing/$training/Rendered"
+videodir="/Users/klust/Projects/LUMI-Videoprocessing/20240423-4day-Helsinki/Rendered"
 
 curdir=$PWD
 cd ../..
@@ -83,7 +84,7 @@ copy_to_repo private 1_05_Compilers_and_Parallel_Programming_Models
 copy_to_repo private 1_07_Cray_Scientific_Libraries
 copy_to_repo private 1_09_Offload_CCE
 
-copy_to_repo private 2_01_Advanced_Application_Placement
+copy_to_repo private 2_05_Advanced_Application_Placement
 copy_to_repo private 2_03_Debugging_at_Scale
 
 copy_to_repo private 3_01_Introduction_to_Perftools
@@ -99,7 +100,7 @@ copy_to_repo private 4_04_IO_Optimization_Parallel_IO
 #
 
 echo -e "\nProcessing AMD materials..."
-copy_to_repo public 2_06_Introduction_to_AMD_ROCm_Ecosystem
+copy_to_repo public 2_01_Introduction_to_AMD_ROCm_Ecosystem
 copy_to_repo public 3_07_AMD_ROCgdb_Debugger
 copy_to_repo public 3_09_Introduction_to_Rocprof_Profiling_Tool
 copy_to_repo public 4_06_AMD_Omnitrace
@@ -112,5 +113,5 @@ copy_to_repo public 4_10_Best_Practices_GPU_Optimization
 
 echo -e "\nProcessing LUST materials..."
 copy_to_repo public 1_00_Introduction
-copy_to_repo public 2_05_LUMI_Software_Stacks
+copy_to_repo public 2_07_LUMI_Software_Stacks
 copy_to_repo public 4_11_LUMI_Support_and_Documentation
