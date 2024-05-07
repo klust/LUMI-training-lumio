@@ -78,3 +78,19 @@ function copy_to_repo {
 echo -e "\nProcessing LUST materials..."
 copy_to_repo public Demo1-Fooocus
 copy_to_repo public Demo2-Distributed_learning
+
+copy_to_repo public 00_Introduction
+copy_to_repo public 01_LUMI_Architecture
+copy_to_repo public 02_HPE_Cray_Programming_Environment
+copy_to_repo public 03_Getting_Access
+copy_to_repo public 04_Modules_on_LUMI
+copy_to_repo public 05_LUMI_Software_Stacks
+copy_to_repo public 06_Slurm_on_LUMI
+copy_to_repo public 07_Binding
+copy_to_repo public 08_LUMI_IO
+copy_to_repo public 09_Containers
+copy_to_repo public 10_LUMI_Support_Documentation
+copy_to_repo public 11_LUMI_Netherlands
+copy_to_repo public 12_What_Else
+copy_to_repo public 13_WrapUp_Day1
+copy_to_repo public 14_Introduction_Day2
