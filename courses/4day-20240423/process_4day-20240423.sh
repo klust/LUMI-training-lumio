@@ -11,7 +11,7 @@ EXERCISES="Exercises"
 # - Add overwrites for lumi_c.sh and lumi_g.sh in exercises/HPE
 overwrite=0
 # - Pack the exercises in a tar file for HPE and one for AMD
-pack_exercises=
+pack_exercises=0
 
 training="${PWD##*/LUMI-training-lumio/courses/}"
 if [[ "$training" == "$PWD" ]]
@@ -51,33 +51,12 @@ echo -e "\nOverwriting scripts to set the environment for the exercises..."
 mkdir -p overwrite/$EXERCISES/HPE
 pushd overwrite/$EXERCISES/HPE
 
-cat >lumi_c_after.sh <<-EOF
-# LUMI-C environment (for running after the course)
-# Replace XXXXXXXXX in the line below with the project
-# you want to use for running.
-export SLURM_ACCOUNT=project_XXXXXXXXX
-export SLURM_PARTITION=small
-
-export SBATCH_ACCOUNT=${SLURM_ACCOUNT}
-export SBATCH_PARTITION=${SLURM_PARTITION}
-
-export SALLOC_ACCOUNT=${SLURM_ACCOUNT}
-export SALLOC_PARTITION=${SLURM_PARTITION}
-EOF
-
-cat >lumi_g_after.sh <<-EOF
-# LUMI-G environment (for running after the course)
-# Replace XXXXXXXXX in the line below with the project
-# you want to use for running.
-export SLURM_ACCOUNT=project_XXXXXXXXX
-export SLURM_PARTITION=small-g
-
-export SBATCH_ACCOUNT=${SLURM_ACCOUNT}
-export SBATCH_PARTITION=${SLURM_PARTITION}
-
-export SALLOC_ACCOUNT=${SLURM_ACCOUNT}
-export SALLOC_PARTITION=${SLURM_PARTITION}
-EOF
+sed -e 's|\(export SLURM_ACCOUNT=project\)_.*|\1_46YXXXXXX|' \
+    -e 's|export SLURM_RESERVATION=.*|unset SLURM_RESERVATION|' \
+    ../../../$EXERCISES/HPE/lumi_c.sh > lumi_c_after.sh
+sed -e 's|\(export SLURM_ACCOUNT=project\)_.*|\1_46YXXXXXX|' \
+    -e 's|export SLURM_RESERVATION=.*|unset SLURM_RESERVATION|' \
+    ../../../$EXERCISES/HPE/lumi_g.sh > lumi_g_after.sh
 
 # Need to set the timestamp of the file as otherwise we'll get
 # a different tar file everytime the script runs.
@@ -86,17 +65,17 @@ touch -r ../../../$EXERCISES/HPE/lumi_g.sh lumi_g_after.sh
 
 popd
 
-mkdir -p overwrite/$EXERCISES/HPE/day4
-pushd overwrite/$EXERCISES/HPE/day4
+mkdir -p overwrite/$EXERCISES/HPE/day4/VH1-io
+pushd overwrite/$EXERCISES/HPE/day4/VH1-io
 
-gtar -xf ../../../../$EXERICSES/HPE/day4/VH1-io.tar
-sed -e 's/-s \${STRIPE_SIZE}/-S \${STRIPE_SIZE}/' -i VH1-io/README
+gtar -xf ../../../../../$EXERCISES/HPE/day4/VH1-io/VH1-io.tar
+sed -e 's/-s \${STRIPE_SIZE}/-S \${STRIPE_SIZE}/' -i '' VH1-io/README
 gtar -cf VH1-io.tar VH1-io
 /bin/rm -rf VH1-io
 
 # Need to set the timestamp of the file as otherwise we'll get
 # a different tar file everytime the script runs.
-touch -r ../../../$EXERCISES/HPE/day4/VH1-io.tar VH1-io.sh
+touch -r ../../../../../$EXERCISES/HPE/day4/VH1-io/VH1-io.tar VH1-io.tar
 
 popd
 
@@ -113,7 +92,7 @@ then
     # Do some clean-up
     #
     echo -e "\nDoing some cleanup of the exercises directories before packing..."
-    pushd $EXERCISES/AMD/HPCTrainingExamples/HIP/jacobi ; make clean ; popd
+    pushd $EXERCISES/AMD/HPCTrainingExamples/HIP/jacobi ; make -f Makefile.cray clean ; popd
     find . -name "*.swp" -exec /bin/rm -f '{}' \;
 
     #
