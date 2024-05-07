@@ -19,6 +19,7 @@ repo="lumi-${projectid}-public"
 if [ -d $directory ]
 then
     echo "Found public data for training '$training', pushing now."
+    find . -name ".DS_store" -exec /bin/rm '{}' \;
     rclone mkdir "$repo:$training"
     rclone copy --bwlimit ${RCLONE_BWLIMIT:-0} "$directory" "$repo:$training"
 else
@@ -33,6 +34,7 @@ repo="lumi-${projectid}-private"
 if [ -d $directory ]
 then
     echo "Found private data for training '$training', pushing now."
+    find . -name ".DS_store" -exec /bin/rm '{}' \;
     rclone mkdir "$repo:$training"
     rclone copy --bwlimit ${RCLONE_BWLIMIT:-0} "$directory" "$repo:$training"
 else
