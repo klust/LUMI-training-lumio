@@ -71,6 +71,8 @@ if [[ "$training" == "$PWD" ]]
 then
     echo "Failed to find the name of the course."
     exit
+else
+    echo "Processing slides in public/$training/img/$slidestack..."
 fi
 
 #
