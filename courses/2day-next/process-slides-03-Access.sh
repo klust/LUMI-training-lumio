@@ -11,6 +11,7 @@ slidealias=( \
     "ProjectManagement" \
     "FileSpacesUser" \
     "FileSpacesProject" \
+    "FileSpacesOverview" \
     "FileSpacesFurtherInfo" \
     "Access" \
     "OpenOnDemand_01" \
@@ -23,7 +24,8 @@ slidealias=( \
     "OpenOnDemand_08" \
     "OpenOnDemand_09" \
     "DataTransfer" \
-    "LUMIOWhatIs" \
+    "LUMIOWhatIs_1" \
+    "LUMIOWhatIs_2" \
     "LUMIOAccessing" \
     "LUMIOAccessingKeyGeneration" \
     "LUMIOCredentialsWeb_01" \
