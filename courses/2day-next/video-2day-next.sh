@@ -1,13 +1,14 @@
 #! /usr/bin/env bash
 
+# Adapt the next one by hand!
+videodir="/Users/klust/Projects/LUMI-Videoprocessing/20240502-2day-Amsterdam/Rendered"
+
 training="${PWD##*/LUMI-training-lumio/courses/}"
 if [[ "$training" == "$PWD" ]]
 then
     echo "Failed to find the name of the course."
     exit
 fi
-
-videodir="/Users/klust/Projects/LUMI-Videoprocessing/20240502-2day-Amsterdam/Rendered"
 
 curdir=$PWD
 cd ../..
