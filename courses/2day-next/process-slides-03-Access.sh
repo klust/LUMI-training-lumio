@@ -11,7 +11,7 @@ slidealias=( \
     "ProjectManagement" \
     "FileSpacesUser" \
     "FileSpacesProject" \
-    "FileSpacesOverview" \
+    "FileSpacesQuota" \
     "FileSpacesFurtherInfo" \
     "Access" \
     "OpenOnDemand_01" \
