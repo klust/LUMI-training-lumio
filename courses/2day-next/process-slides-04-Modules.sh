@@ -74,9 +74,6 @@ imgalias=( \
     "None" \
     "ModuleKeywordHTTPS_1" \
     "ModuleKeywordHTTPS_2" \
-    "ModuleKeywordHTTPS_3" \
-    "ModuleKeywordHTTPS_4" \
-    "ModuleKeywordHTTPS_5" \
     "None" \
     "ModuleAvail_1" \
     "ModuleAvail_2" \
@@ -98,6 +95,8 @@ if [[ "$training" == "$PWD" ]]
 then
     echo "Failed to find the name of the course."
     exit
+else
+    echo "Processing slides in public/$training/img/$slidestack..."
 fi
 
 #
