@@ -8,20 +8,28 @@
     -   PPTX files
     -   Video files
 -   Proposed names, including capitalisation:
-    -   00-Introduction
-    -   01-Architecture
-    -   02-CPE
-    -   03-Access
-    -   04-Modules
-    -   05-SoftwareStacks
-    -   06-WrapUpDay1
-    -   07-IntroductionDay2
-    -   08-Slurm
-    -   09-Binding
-    -   10-Lustre
-    -   11-Containers
-    -   12-Support
-    -   13-WhatElse
+    -   Main notes:
+        -   00-Introduction
+        -   01-Architecture
+        -   02-CPE
+        -   03-Access
+        -   04-Modules
+        -   05-SoftwareStacks
+        -   06-WrapUpDay1
+        -   07-IntroductionDay2
+        -   06-Slurm
+        -   07-Binding
+        -   08-Lustre
+        -   09-Containers
+        -   10-Support
+    -   Corresponding exercises have the same name, but with an `E` added in front of the name
+    -   Introductions: Name starts with an I
+        -   I01-IntroductionCourse
+        -   I02-WrapUpDay1
+        -   I03-IntroductionDay2
+        -   I04-WhatElse
+    -   Materials overview pages have the same name but with a `M` added to the front of it.
+
 
 ## Scripts
 
