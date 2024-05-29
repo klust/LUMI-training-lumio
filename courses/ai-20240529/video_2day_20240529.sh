@@ -7,7 +7,7 @@ then
     exit
 fi
 
-videodir="/Users/klust/Projects/LUMI-Videoprocessing/20240502-2day-Amsterdam/Rendered"
+videodir="/Users/klust/Projects/LUMI-Videoprocessing/ai-20240529/Rendered"
 
 curdir=$PWD
 cd ../..
@@ -75,22 +75,24 @@ function copy_to_repo {
 # LUST stuff
 #
 
-echo -e "\nProcessing LUST materials..."
-copy_to_repo public Demo1-Fooocus
-copy_to_repo public Demo2-Distributed_learning
-
-copy_to_repo public 00_Introduction
-copy_to_repo public 01_LUMI_Architecture
-copy_to_repo public 02_HPE_Cray_Programming_Environment
-copy_to_repo public 03_Getting_Access
-copy_to_repo public 04_Modules_on_LUMI
-copy_to_repo public 05_LUMI_Software_Stacks
-copy_to_repo public 06_Slurm_on_LUMI
-copy_to_repo public 07_Binding
-copy_to_repo public 08_LUMI_IO
-copy_to_repo public 09_Containers
-copy_to_repo public 10_LUMI_Support_Documentation
-copy_to_repo public 11_LUMI_Netherlands
-copy_to_repo public 12_What_Else
-copy_to_repo public 13_WrapUp_Day1
-copy_to_repo public 14_Introduction_Day2
+copy_to_repo public 00_Course_Introduction
+copy_to_repo public 01_Introduction
+copy_to_repo public 02_Webinterace
+copy_to_repo public E02_Webinterface
+copy_to_repo public 03_FirstJob
+copy_to_repo public E03_FirstJob
+copy_to_repo public 04_Workarounds
+copy_to_repo public E04_Workarounds
+copy_to_repo public 05_RunningContainers
+copy_to_repo public E05_RunningContainers
+copy_to_repo public 06_BuildingContainers
+copy_to_repo public E06_BuildingContainers
+copy_to_repo public 07_VirtualEnvironments
+copy_to_repo public 08_MultipleGPUs
+copy_to_repo public E08_MultipleGPUs
+copy_to_repo public 09_Ray
+copy_to_repo public E09_Ray
+copy_to_repo public 10_ExtremeScale
+copy_to_repo public E10_ExtremeScale
+copy_to_repo public 11_LUMIO
+copy_to_repo public 12_Coupling
