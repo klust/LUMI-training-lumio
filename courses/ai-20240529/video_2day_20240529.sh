@@ -86,7 +86,6 @@ copy_to_repo public E04_Workarounds
 copy_to_repo public 05_RunningContainers
 copy_to_repo public E05_RunningContainers
 copy_to_repo public 06_BuildingContainers
-copy_to_repo public E06_BuildingContainers
 copy_to_repo public 07_VirtualEnvironments
 copy_to_repo public 08_MultipleGPUs
 copy_to_repo public E08_MultipleGPUs
