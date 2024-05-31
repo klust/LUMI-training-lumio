@@ -77,7 +77,7 @@ function copy_to_repo {
 
 copy_to_repo public 00_Course_Introduction
 copy_to_repo public 01_Introduction
-copy_to_repo public 02_Webinterace
+copy_to_repo public 02_Webinterface
 copy_to_repo public E02_Webinterface
 copy_to_repo public 03_FirstJob
 copy_to_repo public E03_FirstJob
