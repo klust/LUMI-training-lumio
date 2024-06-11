@@ -205,7 +205,7 @@ copy_to_repo private "$SLIDES/HPE/01_Architecture_PE_modules_slurm.pdf"         
 copy_to_repo private "$SLIDES/HPE/02_introduction_to_performance_analysis_with_perftools.pdf" "LUMI-$training-1_02_introduction_to_performance_analysis_with_perftools.pdf"
 copy_to_repo private "$SLIDES/HPE/03_cpu_performance_optimization.pdf"                        "LUMI-$training-1_03_cpu_performance_optimization.pdf"
 copy_to_repo private "$SLIDES/HPE/04_Application_Placement.pdf"                               "LUMI-$training-1_04_Application_Placement.pdf"
-       #copy_to_repo private "$SLIDES/HPE/05_Demo.pdf"                                         "LUMI-$training-1_05_Demo.pdf"
+copy_to_repo private "$SLIDES/HPE/05_Demo.pdf"                                                "LUMI-$training-1_05_Demo.pdf"
 #copy_to_repo private "$SLIDES/HPE/06_cray_mpi_short.pdf"                       "LUMI-$training-1_01_Architecture_PE_modules_slurm.pdf"
 #copy_to_repo private "$SLIDES/HPE/07_io_short.pdf"                       "LUMI-$training-1_01_Architecture_PE_modules_slurm.pdf"
 
