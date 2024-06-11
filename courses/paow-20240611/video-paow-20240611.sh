@@ -75,4 +75,11 @@ function copy_to_repo {
 # LUST stuff
 #
 
-#copy_to_repo public 00_Course_Introduction
+copy_to_repo public  1_00_Course_Introduction
+copy_to_repo private 1_01_HPE_PE
+copy_to_repo private E1_01_HPE_PE
+copy_to_repo private 1_02_Perftools
+copy_to_repo private 1_03_PerformanceOptimization
+copy_to_repo private 1_04_ApplicationPlacement
+copy_to_repo private 1_05_PerformanceAnalysisAtWork_1
+copy_to_repo private 1_06_PerformanceAnalysisAtWork_2
