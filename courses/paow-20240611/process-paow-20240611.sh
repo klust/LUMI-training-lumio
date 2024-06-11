@@ -65,9 +65,9 @@ touch -r ../../../$EXERCISES/HPE/lumi_g.sh lumi_g_after.sh
 
 popd
 
-VH1_io_dir='04_io'
-mkdir -p overwrite/$EXERCISES/HPE/${VH1_io_dir}/VH1-io
-pushd overwrite/$EXERCISES/HPE/${VH1_io_dir}/VH1-io
+#VH1_io_dir='04_io'
+#mkdir -p overwrite/$EXERCISES/HPE/${VH1_io_dir}/VH1-io
+#pushd overwrite/$EXERCISES/HPE/${VH1_io_dir}/VH1-io
 
 #gtar -xf ../../../../../$EXERCISES/HPE/${VH1_io_dir}/VH1-io.tar
 #sed -e 's/-s \${STRIPE_SIZE}/-S \${STRIPE_SIZE}/' -i '' VH1-io/README
@@ -198,21 +198,29 @@ function copy_to_repo {
 echo -e "\nProcessing HPE materials..."
 
 # Temporary - to delete after the course
-copy_to_repo public  "$EXERCISES/HPE/03_mpi/ProgrammingModelExamples_SLURM.pdf"       "LUMI-$training-E-2-03-ProgrammingModelExamples_SLURM.pdf"
+copy_to_repo public  "$EXERCISES/HPE/03_mpi/ProgrammingModelExamples_SLURM.pdf"               "LUMI-$training-E-2-03-ProgrammingModelExamples_SLURM.pdf"
+copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                              "LUMI-$training-Exercises_HPE_Day1.pdf"
 
-#copy_to_repo private "$SLIDES/HPE/Exercises.pdf"                                       "LUMI-$training-Exercises_HPE.pdf"
-#copy_to_repo private "$SLIDES/HPE/01_EX_Architecture.pdf"                              "LUMI-$training-1_01_HPE_Cray_EX_Architecuture.pdf"
+copy_to_repo private "$SLIDES/HPE/01_Architecture_PE_modules_slurm.pdf"                       "LUMI-$training-1_01_Architecture_PE_modules_slurm.pdf"
+copy_to_repo private "$SLIDES/HPE/02_introduction_to_performance_analysis_with_perftools.pdf" "LUMI-$training-1_02_introduction_to_performance_analysis_with_perftools.pdf"
+copy_to_repo private "$SLIDES/HPE/03_cpu_performance_optimization.pdf"                        "LUMI-$training-1_03_cpu_performance_optimization.pdf"
+copy_to_repo private "$SLIDES/HPE/04_Application_Placement.pdf"                               "LUMI-$training-1_04_Application_Placement.pdf"
+       #copy_to_repo private "$SLIDES/HPE/05_Demo.pdf"                                         "LUMI-$training-1_05_Demo.pdf"
+#copy_to_repo private "$SLIDES/HPE/06_cray_mpi_short.pdf"                       "LUMI-$training-1_01_Architecture_PE_modules_slurm.pdf"
+#copy_to_repo private "$SLIDES/HPE/07_io_short.pdf"                       "LUMI-$training-1_01_Architecture_PE_modules_slurm.pdf"
 
-#copy_to_repo private "$SLIDES/HPE/Exercises.pdf"                                       "LUMI-$training-Exercises_HPE.pdf"
-copy_to_repo private "exercises_HPE.tar"                                               "LUMI-$training-Exercises_HPE.tar"
-copy_to_repo private "exercises_HPE.tar.bz2"                                           "LUMI-$training-Exercises_HPE.tar.bz2"
+copy_to_repo private "$SLIDES/HPE/Exercises.pdf"                                              "LUMI-$training-Exercises_HPE.pdf"
+copy_to_repo private "exercises_HPE.tar"                                                      "LUMI-$training-Exercises_HPE.tar"
+copy_to_repo private "exercises_HPE.tar.bz2"                                                  "LUMI-$training-Exercises_HPE.tar.bz2"
 
 #
 # AMD stuff
 #
 
 echo -e "\nProcessing AMD materials..."
-#copy_to_repo public "$SLIDES/AMD/session-1-hip_intro.pdf"                              "LUMI-$training-2_01_Introduction_to_AMD_ROCm_Ecosystem.pdf"
+copy_to_repo public "$SLIDES/AMD/AMD-session-1a-profiler-tools-overview.pdf"           "LUMI-$training-2_01_profiler-tools-overview.pdf"
+copy_to_repo public "$SLIDES/AMD/AMD-session-1b-omnitrace-by-example.pdf"              "LUMI-$training-2_01_omnitrace-by-example.pdf"
+copy_to_repo public "$SLIDES/AMD/AMD-session-2-omiperf.pdf"                            "LUMI-$training-2_02_omiperf.pdf"
 
 #copy_to_repo public "exercises_AMD.tar"                                                "LUMI-$training-Exercises_AMD.tar"
 #copy_to_repo public "exercises_AMD.tar.bz2"                                            "LUMI-$training-Exercises_AMD.tar.bz2"
