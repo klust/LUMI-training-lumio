@@ -9,9 +9,15 @@ EXERCISES="Exercises"
 
 # Additional variables
 # - Add overwrites for lumi_c.sh and lumi_g.sh in exercises/HPE
-overwrite=0
+overwrite=1
 # - Pack the exercises in a tar file for HPE and one for AMD
-pack_exercises=0
+pack_exercises=1
+
+# Programs
+GNUTAR=tar
+#GNUTAR=gtar
+
+################################################################################
 
 training="${PWD##*/LUMI-training-lumio/courses/}"
 if [[ "$training" == "$PWD" ]]
@@ -46,39 +52,24 @@ done
 if [ "$overwrite" = "1" ]  # Change variable at its definition to 1 after the course.
 then 
 
-echo -e "\nOverwriting scripts to set the environment for the exercises..."
+    echo -e "\nOverwriting scripts to set the environment for the exercises..."
 
-mkdir -p overwrite/$EXERCISES/HPE
-pushd overwrite/$EXERCISES/HPE
+    mkdir -p overwrite/$EXERCISES/HPE
+    pushd overwrite/$EXERCISES/HPE
 
-sed -e 's|\(export SLURM_ACCOUNT=project\)_.*|\1_46YXXXXXX|' \
-    -e 's|export SLURM_RESERVATION=.*|unset SLURM_RESERVATION|' \
-    ../../../$EXERCISES/HPE/lumi_c.sh > lumi_c_after.sh
-sed -e 's|\(export SLURM_ACCOUNT=project\)_.*|\1_46YXXXXXX|' \
-    -e 's|export SLURM_RESERVATION=.*|unset SLURM_RESERVATION|' \
-    ../../../$EXERCISES/HPE/lumi_g.sh > lumi_g_after.sh
+    sed -e 's|\(export SLURM_ACCOUNT=project\)_.*|\1_46YXXXXXX|' \
+        -e 's|export SLURM_RESERVATION=.*|unset SLURM_RESERVATION|' \
+        ../../../$EXERCISES/HPE/lumi_c.sh > lumi_c_after.sh
+    sed -e 's|\(export SLURM_ACCOUNT=project\)_.*|\1_46YXXXXXX|' \
+        -e 's|export SLURM_RESERVATION=.*|unset SLURM_RESERVATION|' \
+        ../../../$EXERCISES/HPE/lumi_g.sh > lumi_g_after.sh
 
-# Need to set the timestamp of the file as otherwise we'll get
-# a different tar file everytime the script runs.
-touch -r ../../../$EXERCISES/HPE/lumi_c.sh lumi_c_after.sh
-touch -r ../../../$EXERCISES/HPE/lumi_g.sh lumi_g_after.sh
+    # Need to set the timestamp of the file as otherwise we'll get
+    # a different tar file everytime the script runs.
+    touch -r ../../../$EXERCISES/HPE/lumi_c.sh lumi_c_after.sh
+    touch -r ../../../$EXERCISES/HPE/lumi_g.sh lumi_g_after.sh
 
-popd
-
-#VH1_io_dir='04_io'
-#mkdir -p overwrite/$EXERCISES/HPE/${VH1_io_dir}/VH1-io
-#pushd overwrite/$EXERCISES/HPE/${VH1_io_dir}/VH1-io
-
-#gtar -xf ../../../../../$EXERCISES/HPE/${VH1_io_dir}/VH1-io.tar
-#sed -e 's/-s \${STRIPE_SIZE}/-S \${STRIPE_SIZE}/' -i '' VH1-io/README
-#gtar -cf VH1-io.tar VH1-io
-#/bin/rm -rf VH1-io
-
-# Need to set the timestamp of the file as otherwise we'll get
-# a different tar file everytime the script runs.
-#touch -r ../../../../../$EXERCISES/HPE/day4/VH1-io/VH1-io.tar VH1-io.tar
-
-popd
+    popd # from pushd overwrite/$EXERCISES/HPE
 
 fi
 
@@ -93,7 +84,7 @@ then
     # Do some clean-up
     #
     echo -e "\nDoing some cleanup of the exercises directories before packing..."
-    pushd $EXERCISES/AMD/HPCTrainingExamples/HIP/jacobi ; make -f Makefile.cray clean ; popd
+    #pushd $EXERCISES/AMD/HPCTrainingExamples/HIP/jacobi ; make -f Makefile.cray clean ; popd
     find . -name "*.swp" -exec /bin/rm -f '{}' \;
 
     #
@@ -102,11 +93,11 @@ then
     if [ -d "$EXERCISES/HPE" ]
     then
         echo -e "\nCreating tar-file with HPE exercises..."
-        gtar -cf exercises_HPE.tar $EXERCISES/HPE
+        $GNUTAR -cf exercises_HPE.tar $EXERCISES/HPE
         if [ "$overwrite" = "1" ]; 
         then
             cd overwrite
-            gtar -rf ../exercises_HPE.tar $EXERCISES/HPE
+            $GNUTAR -rf ../exercises_HPE.tar $EXERCISES/HPE
             cd ..
         fi
         # Compress but use --keep to preserve the input file also
@@ -115,24 +106,10 @@ then
     if [ -d "$EXERCISES/AMD" ]
     then
         echo -e "\nCreating tar-file with AMD exercises..."
-        gtar -cf exercises_AMD.tar $EXERCISES/AMD
+        $GNUTAR -cf exercises_AMD.tar $EXERCISES/AMD
         # Compress but use --keep to preserve the input file also
         bzip2 -f --keep --best exercises_AMD.tar
     fi
-fi
-
-if [ -d "$EXERCISES/AMD/Pytorch" ]
-then
-    echo -e "\nCreating tar-file with AMD demo scripts..."
-
-    mkdir -p $SLIDES/AMD
-    pushd $EXERCISES/AMD
-    demo_scripts="session-6-scripts"
-    gtar -cf "../../$SLIDES/AMD/$demo_scripts.tar" Pytorch
-    bzip2 -f --keep --best "../../$SLIDES/AMD/$demo_scripts.tar"
-    touch -r Pytorch "../../$SLIDES/AMD/$demo_scripts.tar"
-    touch -r Pytorch "../../$SLIDES/AMD/$demo_scripts.tar.bz2"
-    popd
 fi
 
 ###############################################################################
@@ -199,15 +176,16 @@ echo -e "\nProcessing HPE materials..."
 
 # Temporary - to delete after the course
 copy_to_repo public  "$EXERCISES/HPE/03_mpi/ProgrammingModelExamples_SLURM.pdf"               "LUMI-$training-E-2-03-ProgrammingModelExamples_SLURM.pdf"
-copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                              "LUMI-$training-Exercises_HPE_Day1.pdf"
+#copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                              "LUMI-$training-Exercises_HPE_Day1.pdf"
+copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                              "LUMI-$training-Exercises_HPE_Day2.pdf"
 
 copy_to_repo private "$SLIDES/HPE/01_Architecture_PE_modules_slurm.pdf"                       "LUMI-$training-1_01_Architecture_PE_modules_slurm.pdf"
 copy_to_repo private "$SLIDES/HPE/02_introduction_to_performance_analysis_with_perftools.pdf" "LUMI-$training-1_02_introduction_to_performance_analysis_with_perftools.pdf"
 copy_to_repo private "$SLIDES/HPE/03_cpu_performance_optimization.pdf"                        "LUMI-$training-1_03_cpu_performance_optimization.pdf"
 copy_to_repo private "$SLIDES/HPE/04_Application_Placement.pdf"                               "LUMI-$training-1_04_Application_Placement.pdf"
 copy_to_repo private "$SLIDES/HPE/05_Demo.pdf"                                                "LUMI-$training-1_05_Demo.pdf"
-#copy_to_repo private "$SLIDES/HPE/06_cray_mpi_short.pdf"                       "LUMI-$training-1_01_Architecture_PE_modules_slurm.pdf"
-#copy_to_repo private "$SLIDES/HPE/07_io_short.pdf"                       "LUMI-$training-1_01_Architecture_PE_modules_slurm.pdf"
+copy_to_repo private "$SLIDES/HPE/06_cray_mpi_short.pdf"                                      "LUMI-$training-2_03_cray_mpi.pdf"
+copy_to_repo private "$SLIDES/HPE/07_IO_short_LUMI.pdf"                                       "LUMI-$training-2_04_IO_LUMI.pdf"
 
 copy_to_repo private "$SLIDES/HPE/Exercises.pdf"                                              "LUMI-$training-Exercises_HPE.pdf"
 copy_to_repo private "exercises_HPE.tar"                                                      "LUMI-$training-Exercises_HPE.tar"
@@ -222,12 +200,6 @@ copy_to_repo public "$SLIDES/AMD/AMD-session-1a-profiler-tools-overview.pdf"    
 copy_to_repo public "$SLIDES/AMD/AMD-session-1b-omnitrace-by-example.pdf"              "LUMI-$training-2_01_omnitrace-by-example.pdf"
 copy_to_repo public "$SLIDES/AMD/AMD-session-2-omiperf.pdf"                            "LUMI-$training-2_02_omiperf.pdf"
 
+# No files for the AMD exercises this time.
 #copy_to_repo public "exercises_AMD.tar"                                                "LUMI-$training-Exercises_AMD.tar"
 #copy_to_repo public "exercises_AMD.tar.bz2"                                            "LUMI-$training-Exercises_AMD.tar.bz2"
-
-#
-# LUST stuff
-#
-
-#echo -e "\nProcessing LUST materials..."
-#copy_to_repo public "$SLIDES/LUST/LUMI-4day-20240423-software.pdf"                     "LUMI-4day-20240423-2_07_software_stacks.pdf"
