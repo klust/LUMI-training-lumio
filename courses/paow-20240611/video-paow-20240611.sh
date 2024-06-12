@@ -83,3 +83,8 @@ copy_to_repo private 1_03_PerformanceOptimization
 copy_to_repo private 1_04_ApplicationPlacement
 copy_to_repo private 1_05_PerformanceAnalysisAtWork_1
 copy_to_repo private 1_06_PerformanceAnalysisAtWork_2
+copy_to_repo public  2_01_AMD_tools_1
+copy_to_repo public  2_02_AMD_tools_2
+copy_to_repo private 2_03_MPI
+copy_to_repo private E2_03_MPI
+copy_to_repo private 2_04_IO
