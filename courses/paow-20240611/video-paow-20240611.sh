@@ -88,3 +88,4 @@ copy_to_repo public  2_02_AMD_tools_2
 copy_to_repo private 2_03_MPI
 copy_to_repo private E2_03_MPI
 copy_to_repo private 2_04_IO
+copy_to_repo private E2_04_IO

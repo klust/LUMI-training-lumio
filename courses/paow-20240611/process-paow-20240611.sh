@@ -175,9 +175,9 @@ function copy_to_repo {
 echo -e "\nProcessing HPE materials..."
 
 # Temporary - to delete after the course
-copy_to_repo public  "$EXERCISES/HPE/03_mpi/ProgrammingModelExamples_SLURM.pdf"               "LUMI-$training-E-2-03-ProgrammingModelExamples_SLURM.pdf"
+#copy_to_repo public  "$EXERCISES/HPE/03_mpi/ProgrammingModelExamples_SLURM.pdf"               "LUMI-$training-E-2-03-ProgrammingModelExamples_SLURM.pdf"
 #copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                              "LUMI-$training-Exercises_HPE_Day1.pdf"
-copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                              "LUMI-$training-Exercises_HPE_Day2.pdf"
+#copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                              "LUMI-$training-Exercises_HPE_Day2.pdf"
 
 copy_to_repo private "$SLIDES/HPE/01_Architecture_PE_modules_slurm.pdf"                       "LUMI-$training-1_01_Architecture_PE_modules_slurm.pdf"
 copy_to_repo private "$SLIDES/HPE/02_introduction_to_performance_analysis_with_perftools.pdf" "LUMI-$training-1_02_introduction_to_performance_analysis_with_perftools.pdf"
