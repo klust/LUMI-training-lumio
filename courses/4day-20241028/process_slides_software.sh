@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Some variables.
-slidestack="LUMI-4day-20240423-software"
+slidestack="LUMI-4day-20241028-software"
 
 slidealias=( \
     "IntroTitle" \
@@ -34,6 +34,13 @@ slidealias=( \
     "LMODModuleAvail_4" \
     "LMODModuleAvail_5" \
     "LMODModuleAvail_6" \
+    "LMODModuleAvail_7" \
+    "LMODModuleAvail_8" \
+    "LMODModuleAvail_9" \
+    "LMODModuleAvail_10" \
+    "LMODModuleAvail_11" \
+    "LMODModuleAvail_12" \
+    "LMODModuleAvail_13" \
     "LMODChangingModuleListDisplay" \
     "EasyBuildInstallingSoftwareHPC" \
     "EasyBuildExtendingLUMIStack" \
