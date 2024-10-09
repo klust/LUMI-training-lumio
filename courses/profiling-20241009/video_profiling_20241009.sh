@@ -80,16 +80,17 @@ copy_to_repo private 01a_HPE_Cray_PE_tools__Hardware
 copy_to_repo private 01b_HPE_Cray_PE_tools__Programming_environment
 copy_to_repo private 01c_HPE_Cray_PE_tools__Job_placement
 copy_to_repo private 01d_HPE_Cray_PE_tools__MPICH_GPU
-copy_to_repo private 01e_HPE_Cray_PE_tools__Performance_analysis
+copy_to_repo private 01e_HPE_Cray_PE_tools__CCE_Fortran_and_offload
+copy_to_repo private 01f_HPE_Cray_PE_tools__Performance_analysis
 
 #
 # AMD stuff
 #
 
 echo -e "\nProcessing AMD materials..."
-copy_to_repo public 02a_AMD_tools__rocprof
-copy_to_repo public 02b_AMD_tools__OmniTrace
-copy_to_repo public 02c_AMD_tools__OmniPerf
+copy_to_repo public 02a_AMD_tools__GPU_timeline_profiling
+copy_to_repo public 02b_AMD_tools__omniperf_and_roofline
+copy_to_repo public 02c_AMD_tools__tips_and_tricks
 
 #
 # LUST stuff
