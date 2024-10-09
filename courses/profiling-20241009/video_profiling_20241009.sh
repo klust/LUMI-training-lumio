@@ -7,7 +7,7 @@ then
     exit
 fi
 
-videodir="/Users/klust/Projects/LUMI-Videoprocessing/20241009-Profiling/Rendered_Q75_1440p"
+videodir="/Users/klust/Projects/LUMI-Videoprocessing/20241009-Profiling/Rendered"
 
 curdir=$PWD
 cd ../..
