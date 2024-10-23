@@ -84,6 +84,7 @@ slidealias=( \
     "ContainersExampleShell" \
     "ContainersExampleExec" \
     "ContainersExampleRun" \
+    "ContainersInteractingRepeat" \
     "ContainersRunning" \
     "ContainersEnvironmentEnhancement_1" \
     "ContainersEnvironmentEnhancement_2" \
