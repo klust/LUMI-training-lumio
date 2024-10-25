@@ -40,7 +40,6 @@ slidealias=( \
     "LMODModuleAvail_10" \
     "LMODModuleAvail_11" \
     "LMODModuleAvail_12" \
-    "LMODModuleAvail_13" \
     "LMODChangingModuleListDisplay" \
     "EasyBuildInstallingSoftwareHPC" \
     "EasyBuildExtendingLUMIStack" \
