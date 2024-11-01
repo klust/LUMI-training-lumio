@@ -9,9 +9,9 @@ EXERCISES="Exercises"
 
 # Additional variables
 # - Add overwrites for lumi_c.sh and lumi_g.sh in exercises/HPE
-overwrite=0
+overwrite=1
 # - Pack the exercises in a tar file for HPE and one for AMD
-pack_exercises=0
+pack_exercises=1
 
 training="${PWD##*/LUMI-training-lumio/courses/}"
 if [[ "$training" == "$PWD" ]]
@@ -249,4 +249,4 @@ copy_to_repo public "exercises_AMD.tar.bz2"                                     
 
 echo -e "\nProcessing LUST materials..."
 copy_to_repo public "$SLIDES/LUST/LUMI-4day-20241028-software.pdf"                       "LUMI-4day-20241028-2_07_software_stacks.pdf"
-copy_to_repo public "$SLIDES/LUST/LUMI-4day-20241028-support.pdf"                        "LUMI-4day-20241028-4_12_LUMI_Support_and_Documentation.pdf"
+copy_to_repo public "$SLIDES/LUST/LUMI-4day-20231003-LUMI_Support_and_Documentation.pdf" "LUMI-4day-20241028-4_12_LUMI_Support_and_Documentation.pdf"
