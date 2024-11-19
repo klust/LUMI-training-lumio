@@ -6,7 +6,7 @@ slidestack="LUMI-2day-20241210-10-ObjectStorage"
 slidealias=( \
     "Title" \
     "WhyKnow" \
-   "LUMIOWhatIs_1" \
+    "LUMIOWhatIs_1" \
     "LUMIOWhatIs_2" \
     "LustreVsLUMIO_1" \
     "LustreVsLUMIO_2" \
@@ -17,7 +17,7 @@ slidealias=( \
     "LUMIOCredentialsWebCreate_02" \
     "LUMIOCredentialsWebCreate_03" \
     "LUMIOCredentialsWebCreate_04" \
-    "LUMIOCredentialsWebCreate_05" \
+    "LUMIOCredentialsWebCheck" \
     "LUMIOCredentialsWebExtend" \
     "LUMIOCredentialsWebToolConfig_01" \
     "LUMIOCredentialsWebToolConfig_02" \
