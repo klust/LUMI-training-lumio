@@ -21,9 +21,22 @@ slidealias=( \
     "LUMIOCredentialsWebExtend" \
     "LUMIOCredentialsWebToolConfig_01" \
     "LUMIOCredentialsWebToolConfig_02" \
+    "LUMIOCredentialsOODOverview" \
     "LUMIOCredentialsOODCreate_01" \
+    "LUMIOCredentialsOODCreate_02" \
+    "LUMIOCredentialsOODCreate_03" \
+    "LUMIOCredentialsOODCreate_04" \
+    "LUMIOCredentialsOODCreate_05" \
+    "LUMIOCredentialsOODBrowse_01" \
+    "LUMIOCredentialsOODBrowse_02" \
+    "LUMIOCredentialsOODBrowse_03" \
+    "LUMIOCredentialsOODBrowse_04" \
     "LUMIOCLIToolConfig" \
     "LUMIOCLIToolConfigRclone" \
+    "PoliciesACLs" \
+    "PoliciesACLsExamples" \
+    "SharingData" \
+    "SharingDataPresignedURL" \
     "TipsAndTricks_01" \
     "Questions" \
 )
