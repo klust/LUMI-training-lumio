@@ -76,16 +76,17 @@ function copy_to_repo {
 #
 
 copy_to_repo public 00_Course_Introduction
-copy_to_repo public 01_Introduction
+copy_to_repo public 01_Lumi_Introduction
 copy_to_repo public 02_Webinterface
 copy_to_repo public E02_Webinterface
 copy_to_repo public 03_FirstJob
 copy_to_repo public E03_FirstJob
-copy_to_repo public 04_Workarounds
-copy_to_repo public E04_Workarounds
+copy_to_repo public 04_CheckingGPU
+copy_to_repo public E04_CheckingGPU
 copy_to_repo public 05_RunningContainers
 copy_to_repo public E05_RunningContainers
 copy_to_repo public 06_BuildingContainers
+copy_to_repo public E06_BuildingContainers
 copy_to_repo public 07_VirtualEnvironments
 copy_to_repo public 08_MultipleGPUs
 copy_to_repo public E08_MultipleGPUs
