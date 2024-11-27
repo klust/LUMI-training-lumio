@@ -90,9 +90,7 @@ copy_to_repo public E06_BuildingContainers
 copy_to_repo public 07_VirtualEnvironments
 copy_to_repo public 08_MultipleGPUs
 copy_to_repo public E08_MultipleGPUs
-copy_to_repo public 09_Ray
-copy_to_repo public E09_Ray
-copy_to_repo public 10_ExtremeScale
-copy_to_repo public E10_ExtremeScale
-copy_to_repo public 11_LUMIO
-copy_to_repo public 12_Coupling
+copy_to_repo public 09_ExtremeScale
+copy_to_repo public E09_ExtremeScale
+copy_to_repo public 10_TrainingData
+copy_to_repo public 11_Coupling

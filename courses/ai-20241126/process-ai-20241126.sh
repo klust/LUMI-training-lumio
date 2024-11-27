@@ -6,6 +6,10 @@ projectid="465001363"
 # Subdirectories as these have not been consistent across courses
 SLIDES="slides"
 #EXERCISES="Exercises"
+# Additional variables
+# - Pack the exercises in a tar file for HPE and one for AMD
+#   This requires that the GitHub tag is made.
+pack_exercises=1
 
 #
 # Regular code
@@ -37,6 +41,17 @@ connection="lumik"
 #done
 rsync -aPh --delete --exclude '.git' -e ssh "$connection:$remoteroot/$SLIDES/" "$PWD/$SLIDES"
 
+#
+# Get the GitHub release file.
+#
+
+if [ "$pack_exercises" = "1" ]  # Change variable at its definition to 1 after the course.
+then 
+    wget https://github.com/Lumi-supercomputer/Getting_Started_with_AI_workshop/archive/refs/tags/${training}.tar.gz
+    gunzip ${training}.tar.gz
+    mv ${training}.tar ${training}-Getting_Started_with_AI_workshop.tar
+    bzip2 -k -9 ${training}-Getting_Started_with_AI_workshop.tar
+fi
 
 ###############################################################################
 #
@@ -100,15 +115,17 @@ function copy_to_repo {
 
 echo -e "\nProcessing materials..."
 
-copy_to_repo public "1-lumi-intro.pdf"                                           "LUMI-$training-01-Lumi_intro.pdf"
-copy_to_repo public "Using LUMI web UI.pdf"                                      "LUMI-$training-02-Using_LUMI_web_UI.pdf"
-copy_to_repo public "First AI job on LUMI.pdf"                                   "LUMI-$training-03-First_AI_job.pdf"
-copy_to_repo public "$SLIDES/AMD/Session-04-Understanding GPU activity.pdf"      "LUMI-$training-04-Understanding_GPU_activity.pdf"
-copy_to_repo public "Running_containers_on_LUMI.pdf"                             "LUMI-$training-05-Running_containers_on_LUMI.pdf"
-copy_to_repo public "Building_containers_from_conda_pip_environments.pdf"        "LUMI-$training-06-Building_containers_from_conda_pip_environments.pdf"
-copy_to_repo public "LUMI_07_virtual_environments.pdf"                           "LUMI-$training-07-Extending_containers.pdf"
-copy_to_repo public "Scaling AI to multiple GPUs.pdf"                            "LUMI-$training-08-Scaling_multiple_GPUs.pdf"
-#copy_to_repo public "Hyper-parameter tuning with ray.pdf"                                   "LUMI-$training-09-Hyperparameter_tuning_ray.pdf"
-#copy_to_repo public "Session-10- Extreme scale AI training on LUMI.pdf"                     "LUMI-$training-10-Extreme_scale_AI.pdf"
-#copy_to_repo public "Training_Data_on_LUMI.pdf"                                             "LUMI-$training-11-Training_Data_on_LUMI.pdf"
-#copy_to_repo public "Coupling_Simulation_and_AI.pdf"                                        "LUMI-$training-12-Coupling_Simulation_and_AI.pdf"
+copy_to_repo public "1-lumi-intro.pdf"                                               "LUMI-$training-01-Lumi_intro.pdf"
+copy_to_repo public "Using LUMI web UI.pdf"                                          "LUMI-$training-02-Using_LUMI_web_UI.pdf"
+copy_to_repo public "First AI job on LUMI.pdf"                                       "LUMI-$training-03-First_AI_job.pdf"
+copy_to_repo public "$SLIDES/AMD/Session-04-Understanding GPU activity.pdf"          "LUMI-$training-04-Understanding_GPU_activity.pdf"
+copy_to_repo public "$SLIDES/05_Running_containers_on_LUMI--Ostrava--2024-11-26.pdf" "LUMI-$training-05-Running_containers_on_LUMI.pdf"
+copy_to_repo public "Building_containers_from_conda_pip_environments.pdf"            "LUMI-$training-06-Building_containers_from_conda_pip_environments.pdf"
+copy_to_repo public "LUMI_07_virtual_environments.pdf"                               "LUMI-$training-07-Extending_containers.pdf"
+copy_to_repo public "Scaling AI to multiple GPUs.pdf"                                "LUMI-$training-08-Scaling_multiple_GPUs.pdf"
+copy_to_repo public "$SLIDES/AMD/Session-09- Extreme scale AI training on LUMI.pdf"  "LUMI-$training-09-Extreme_scale_AI.pdf"
+copy_to_repo public "Training_Data_on_LUMI.pdf"                                      "LUMI-$training-10-Training_Data_on_LUMI.pdf"
+copy_to_repo public "Coupling_Simulation_and_AI.pdf"                                 "LUMI-$training-11-Coupling_Simulation_and_AI.pdf"
+
+copy_to_repo public "${training}-Getting_Started_with_AI_workshop.tar"               "${training}-Getting_Started_with_AI_workshop.tar"
+copy_to_repo public "${training}-Getting_Started_with_AI_workshop.tar.bz2"           "${training}-Getting_Started_with_AI_workshop.tar.bz2"
