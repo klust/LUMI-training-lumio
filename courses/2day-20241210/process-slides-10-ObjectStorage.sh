@@ -32,7 +32,8 @@ slidealias=( \
     "LUMIOCredentialsOODBrowse_03" \
     "LUMIOCredentialsOODBrowse_04" \
     "LUMIOCLIToolConfig" \
-    "LUMIOCLIToolConfigRclone" \
+    "LUMIOCLIToolConfigRcloneS3cmd" \
+    "BucketObjectNames" \
     "PoliciesACLs" \
     "PoliciesACLsExamples" \
     "SharingData" \
