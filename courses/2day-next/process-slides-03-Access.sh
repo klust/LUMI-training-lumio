@@ -5,6 +5,7 @@ slidestack="LUMI-2day-next-03-Access"
 
 slidealias=( \
     "Title" \
+    "EuroHPCSupercomputers" \
     "WhoPays" \
     "ProjectsUsers_1" \
     "ProjectsUsers_2" \
@@ -23,20 +24,8 @@ slidealias=( \
     "OpenOnDemand_07" \
     "OpenOnDemand_08" \
     "OpenOnDemand_09" \
+    "OpenOnDemand_10" \
     "DataTransfer" \
-    "LUMIOWhatIs_1" \
-    "LUMIOWhatIs_2" \
-    "LUMIOAccessing" \
-    "LUMIOAccessingKeyGeneration" \
-    "LUMIOCredentialsWeb_01" \
-    "LUMIOCredentialsWeb_02" \
-    "LUMIOCredentialsWeb_03" \
-    "LUMIOCredentialsWeb_04" \
-    "LUMIOCredentialsWeb_05" \
-    "LUMIOCredentialsWeb_06" \
-    "LUMIOCredentialsWeb_07" \
-    "LUMIOConfiguringTools" \
-    "LUMIORclone" \
     "Questions" \
 )
 
