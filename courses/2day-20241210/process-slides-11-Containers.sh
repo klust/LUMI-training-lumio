@@ -13,10 +13,13 @@ slidealias=( \
     "ContainersExamplePull_2" \
     "ContainersExamplePull_3" \
     "ContainersManaging_2" \
-    "ContainersInteracting" \
+    "ContainersInteractingShell" \
     "ContainersExampleShell" \
+    "ContainersInteractingExec" \
     "ContainersExampleExec" \
+    "ContainersInteractingRun" \
     "ContainersExampleRun" \
+    "ContainersInteracting" \
     "ContainersRunning" \
     "ContainersEnvironmentEnhancement_1" \
     "ContainersEnvironmentEnhancement_2" \
