@@ -12,11 +12,14 @@ slidealias=( \
     "LustreVsLUMIO_2" \
     "LustreVsLUMIO_3" \
     "LUMIOAccessing" \
-    "LUMIOCredentialWebOverview" \
+    "LUMIOCredentialWebOverviewPartial1" \
     "LUMIOCredentialsWebCreate_01" \
+    "LUMIOCredentialWebOverviewPartial2" \
     "LUMIOCredentialsWebCreate_02" \
+    "LUMIOCredentialWebOverviewPartial3" \
     "LUMIOCredentialsWebCreate_03" \
     "LUMIOCredentialsWebCreate_04" \
+    "LUMIOCredentialWebOverview" \
     "LUMIOCredentialsWebCheck" \
     "LUMIOCredentialsWebExtend" \
     "LUMIOCredentialsWebToolConfig_01" \
