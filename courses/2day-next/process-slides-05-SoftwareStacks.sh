@@ -43,11 +43,6 @@ slidealias=( \
     "EasyBuildTipsTricks" \
     "EasyBuildTraining" \
     "Questions" \
-    "QuestionEESSI_1" \
-    "QuestionEESSI_2" \
-    "QuestionEESSI_3" \
-    "QuestionEESSI_4" \
-    "QuestionEnd" \
 )
 
 #

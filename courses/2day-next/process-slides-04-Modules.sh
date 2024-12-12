@@ -11,11 +11,13 @@ slidealias=( \
     "BenefitsHierarchyDemo" \
     "ModuleNamesFamilies" \
     "ModuleExtensions" \
-    "ModuleSpider" \
+    "ModuleSpiderPartial1" \
     "ModuleSpiderCommand_1" \
     "ModuleSpiderCommand_2" \
     "ModuleSpiderCommand_3" \
+    "ModuleSpiderPartial2" \
     "ModuleSpiderFFTW" \
+    "ModuleSpider" \
     "ModuleSpiderFFTWVersion_1" \
     "ModuleSpiderFFTWVersion_2" \
     "ModuleSpiderRegular" \
