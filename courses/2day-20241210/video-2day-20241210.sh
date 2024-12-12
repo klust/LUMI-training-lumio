@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Adapt the next one by hand!
-videodir="/Users/klust/Projects/LUMI-Videoprocessing/20240502-2day-Amsterdam/Rendered"
+videodir="/Users/klust/Projects/LUMI-Videoprocessing/20241210-2day-online/Rendered"
 
 training="${PWD##*/LUMI-training-lumio/courses/}"
 if [[ "$training" == "$PWD" ]]
@@ -77,20 +77,21 @@ function copy_to_repo {
 #
 
 echo -e "\nProcessing LUST materials..."
-copy_to_repo public Demo1-Fooocus
-copy_to_repo public Demo2-Distributed_learning
+#copy_to_repo public Demo1-Fooocus
+#copy_to_repo public Demo2-Distributed_learning
 
-copy_to_repo public 00-Introduction
+copy_to_repo public I01-Introduction
 copy_to_repo public 01-Architecture
 copy_to_repo public 02-CPE
 copy_to_repo public 03-Access
 copy_to_repo public 04-Modules
 copy_to_repo public 05-SoftwareStacks
-copy_to_repo public 06-WrapUpDay1
-copy_to_repo public 07-IntroductionDay2
-copy_to_repo public 08-Slurm
-copy_to_repo public 09-Binding
-copy_to_repo public 10-Lustre
+copy_to_repo public 06-Support
+copy_to_repo public I02-WrapUpDay1
+copy_to_repo public I03-IntroductionDay2
+copy_to_repo public 07-Slurm
+copy_to_repo public 08-Binding
+copy_to_repo public 09-Lustre
+copy_to_repo public 10-ObjectStorage
 copy_to_repo public 11-Containers
-copy_to_repo public 12-Support
-copy_to_repo public 13-WhatElse
+copy_to_repo public I04-WhatElse
