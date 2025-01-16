@@ -10,7 +10,8 @@ slidealias=( \
     "LowNoiseMode" \
     "ProgrammingModels" \
     "DevelopmentEnvironment" \
-    "CrayComplingEnv" \
+    "AMDTools" \
+    "CrayCompilingEnv" \
     "ScientificLibraries" \
     "CrayMPI" \
     "CrayMPIGPU" \
