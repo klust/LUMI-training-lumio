@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # ID of the training project on LUMI.
-projectid="465001362"
+projectid="465001726"
 
 # Subdirectories as these have not been consistent across courses
 SLIDES="Slides"
