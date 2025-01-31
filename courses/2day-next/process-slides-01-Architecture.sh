@@ -17,6 +17,11 @@ slidealias=( \
     "GPUnodeReal" \
     "GPUnodeFuture" \
     "Slingshot" \
+    "DragonflyConcept1" \
+    "DragonflyConcept2" \
+    "DragonflyLUMI" \
+    "LUMIComputeBlades" \
+    "LUMISwitchBlades" \
     "AssemblyEX" \
     "AssemblyLUMI" \
     "Questions" \
