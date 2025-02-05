@@ -9,7 +9,7 @@ SLIDES="slides"
 # Additional variables
 # - Pack the exercises in a tar file
 #   This requires that the GitHub tag is made.
-pack_exercises=0
+pack_exercises=1
 
 #
 # Regular code
