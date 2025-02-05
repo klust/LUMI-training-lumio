@@ -94,3 +94,4 @@ copy_to_repo public 09_ExtremeScale
 copy_to_repo public E09_ExtremeScale
 copy_to_repo public 10_TrainingData
 copy_to_repo public 11_Coupling
+copy_to_repo public E12_Conclusions
