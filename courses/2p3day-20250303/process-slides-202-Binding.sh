@@ -19,6 +19,7 @@ slidealias=( \
     "SlurmTaskCPUExamples" \
     "SlurmTaskGPU" \
     "MPICHRankRedistribution" \
+    "MPICHNICSelection" \
     "OpenMPBinding" \
     "OpenMPBindingPlaces" \
     "OpenMPBindingProcBind" \
