@@ -14,11 +14,14 @@ slidealias=( \
     "GPUNumberingRemarks" \
     "SlurmTaskDistribution_1" \
     "SlurmTaskDistribution_2" \
-    "SlurmTaskCPU" \
+    "SlurmTaskDistribution_3" \
+    "SlurmTaskCPUWhy" \
+    "SlurmTaskCPUHow" \
     "SlurmTaskCPUMasks" \
     "SlurmTaskCPUExamples" \
     "SlurmTaskGPU" \
-    "MPICHRankRedistribution" \
+    "MPICHRankRedistribution1" \
+    "MPICHRankRedistribution2" \
     "MPICHNICSelection" \
     "OpenMPBinding" \
     "OpenMPBindingPlaces" \
