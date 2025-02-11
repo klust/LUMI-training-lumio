@@ -29,6 +29,7 @@ slidealias=( \
     "ContainersExampleWrapper_4" \
     "ContainersExampleWrapper_5" \
     "ContainersExampleWrapper_6" \
+    "ContainersEnvironmentEnhancement_3" \
     "ContainersPrebuiltAI" \
     "RunningAiComplicated" \
     "RunningAIEasyBuild_1" \
