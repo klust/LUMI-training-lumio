@@ -11,7 +11,8 @@ slidealias=( \
     "ProjectsUsers_2" \
     "ProjectManagement" \
     "FileSpacesUser" \
-    "FileSpacesProject" \
+    "FileSpacesProject1" \
+    "FileSpacesProject2" \
     "FileSpacesQuota" \
     "FileSpacesFurtherInfo" \
     "Access" \
