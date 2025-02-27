@@ -26,7 +26,10 @@ slidealias=( \
     "ModuleSpiderGnuplotVersion_1" \
     "ModuleSpiderGnuplotVersion_2" \
     "ModuleSpiderExtensions" \
-    "ModuleSpiderCMake" \
+    "ModuleSpiderCMake1" \
+    "ModuleSpiderCMake2" \
+    "ModuleSpiderCMake3" \
+    "ModuleSpiderCMake4" \
     "ModuleSpiderCMakeVersion_1" \
     "ModuleKeyword" \
     "ModuleKeywordHTTPS_1" \
