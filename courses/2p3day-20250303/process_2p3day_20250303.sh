@@ -9,9 +9,9 @@ EXERCISES="Exercises"
 
 # Additional variables
 # - Add overwrites for lumi_c.sh and lumi_g.sh in exercises/HPE
-overwrite=1
+overwrite=0
 # - Pack the exercises in a tar file for HPE and one for AMD
-pack_exercises=1
+pack_exercises=0
 
 training="${PWD##*/LUMI-training-lumio/courses/}"
 if [[ "$training" == "$PWD" ]]
@@ -195,24 +195,23 @@ function copy_to_repo {
 #
 
 echo -e "\nProcessing HPE materials..."
-#copy_to_repo public  "$EXERCISES/HPE/day1/ProgrammingModels/ProgrammingModelExamples_SLURM.pdf"  "LUMI-$training-1_04a-ProgrammingModelExamples_SLURM.pdf"
-#copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                         "LUMI-$training-1_Exercises_day1.pdf"
+copy_to_repo public  "$EXERCISES/HPE/day1/ProgrammingModels/ProgrammingModelExamples_SLURM.pdf"  "LUMI-$training-302-ProgrammingModelExamples_SLURM.pdf"
+copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                         "LUMI-$training-1_Exercises_day1.pdf"
 #copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                         "LUMI-$training-2_Exercises_day2.pdf"
 #copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                         "LUMI-$training-3_Exercises_day3.pdf"
-#copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                         "LUMI-$training-4_Exercises_day4.pdf"
 copy_to_repo private "$SLIDES/HPE/Exercises.pdf"                                         "LUMI-$training-Exercises_HPE.pdf"
-copy_to_repo private "$SLIDES/HPE/01_EX_Architecture.pdf"                                "LUMI-$training-301-HPE_Cray_EX_Architecture.pdf"
-copy_to_repo private "$SLIDES/HPE/04_Compilers_and_Programming_Models.pdf"               "LUMI-$training-302-Compilers_and_Parallel_Programming_Models.pdf"
-copy_to_repo private "$SLIDES/HPE/05_Libraries.pdf"                                      "LUMI-$training-303-Cray_Scientific_Libraries.pdf"
-copy_to_repo private "$SLIDES/HPE/06_Directives_Programming.pdf"                         "LUMI-$training-304-Offload_CCE.pdf"
-copy_to_repo private "$SLIDES/HPE/12_2_GPU_porting.pdf"                                  "LUMI-$training-305-Porting_to_GPU.pdf"
-copy_to_repo private "$SLIDES/HPE/08_debugging_at_scale.pdf"                             "LUMI-$training-307-Debugging_at_Scale.pdf"
-copy_to_repo private "$SLIDES/HPE/09_introduction_to_perftools.pdf"                      "LUMI-$training-401-Introduction_to_Perftools.pdf"
-copy_to_repo private "$SLIDES/HPE/13_cpu_performance_optimization.pdf"                   "LUMI-$training-402-Performance_Optimization_Improving_Single_Core.pdf"
-copy_to_repo private "$SLIDES/HPE/10_advanced_performance_analysis_merged.pdf"           "LUMI-$training-403-Advanced_Performance_Analysis.pdf"
-copy_to_repo private "$SLIDES/HPE/11_cray_mpi_MPMD_medium.pdf"                           "LUMI-$training-404-Cray_MPI_on_Slingshot.pdf"
-copy_to_repo private "$SLIDES/HPE/12_1_Python_Frameworks.pdf"                            "LUMI-$training-501-Introduction_to_Python_on_Cray_EX.pdf"
-copy_to_repo private "$SLIDES/HPE/14_IO_medium_LUMI.pdf"                                 "LUMI-$training-503-IO_Optimization_Parallel_IO.pdf"
+copy_to_repo private "$SLIDES/HPE/01_Architecture_PE_modules_slurm.pdf"                  "LUMI-$training-301-HPE_Cray_EX_Architecture.pdf"
+copy_to_repo private "$SLIDES/HPE/02_Compilers_and_Programming_Models.pdf"               "LUMI-$training-302-Compilers_and_Parallel_Programming_Models.pdf"
+copy_to_repo private "$SLIDES/HPE/03_Libraries.pdf"                                      "LUMI-$training-303-Cray_Scientific_Libraries.pdf"
+copy_to_repo private "$SLIDES/HPE/04_Directives_Programming.pdf"                         "LUMI-$training-304-Offload_CCE.pdf"
+#copy_to_repo private "$SLIDES/HPE/12_2_GPU_porting.pdf"                                  "LUMI-$training-305-Porting_to_GPU.pdf"
+copy_to_repo private "$SLIDES/HPE/05_debugging_at_scale.pdf"                             "LUMI-$training-306-Debugging_at_Scale.pdf"
+copy_to_repo private "$SLIDES/HPE/06_introduction_to_perftools.pdf"                      "LUMI-$training-401-Introduction_to_Perftools.pdf"
+copy_to_repo private "$SLIDES/HPE/07_cpu_performance_optimization.pdf"                   "LUMI-$training-402-Performance_Optimization_Improving_Single_Core.pdf"
+copy_to_repo private "$SLIDES/HPE/08_advanced_performance_analysis_merged.pdf"           "LUMI-$training-403-Advanced_Performance_Analysis.pdf"
+copy_to_repo private "$SLIDES/HPE/09_cray_mpi_MPMD_medium.pdf"                           "LUMI-$training-404-Cray_MPI_on_Slingshot.pdf"
+copy_to_repo private "$SLIDES/HPE/10_1_Python_Frameworks.pdf"                            "LUMI-$training-501-Introduction_to_Python_on_Cray_EX.pdf"
+copy_to_repo private "$SLIDES/HPE/11_IO_medium_LUMI.pdf"                                 "LUMI-$training-503-IO_Optimization_Parallel_IO.pdf"
 
 copy_to_repo private "$SLIDES/HPE/Exercises.pdf"                                         "LUMI-$training-Exercises_HPE.pdf"
 
@@ -225,8 +224,8 @@ copy_to_repo private "exercises_HPE.tar.bz2"                                    
 #
 
 echo -e "\nProcessing AMD materials..."
-copy_to_repo public "$SLIDES/AMD/session 01a - HIP and ROCm.pdf"                         "LUMI-$training-306-Introduction_to_AMD_ROCm_Ecosystem.pdf"
-copy_to_repo public "$SLIDES/AMD/session 01b - HIP Optimization.pdf"                     "LUMI-$training-306-Extra_HIP_Optimization.pdf"
+copy_to_repo public "$SLIDES/AMD/session 01a - HIP and ROCm.pdf"                         "LUMI-$training-305-Introduction_to_AMD_ROCm_Ecosystem.pdf"
+#copy_to_repo public "$SLIDES/AMD/session 01b - HIP Optimization.pdf"                     "LUMI-$training-305-Extra_HIP_Optimization.pdf"
 copy_to_repo public "$SLIDES/AMD/session 02 - Debugging with rocgdb.pdf"                 "LUMI-$training-405-AMD_ROCgdb_Debugger.pdf"
 copy_to_repo public "$SLIDES/AMD/session 03 - introduction to rocprof.pdf"               "LUMI-$training-406-Introduction_to_Rocprof_Profiling_Tool.pdf"
 copy_to_repo public "$SLIDES/AMD/session 04 - omnitrace.pdf"                             "LUMI-$training-503-AMD_Omnitrace.pdf"
