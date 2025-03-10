@@ -80,16 +80,18 @@ echo -e "\nProcessing HPE materials..."
 copy_to_repo private 301-HPE_Cray_EX_Architecture
 copy_to_repo private 302-Compilers_and_Parallel_Programming_Models
 copy_to_repo private 303-Cray_Scientific_Libraries
+copy_to_repo private E303-Cray_Scientific_Libraries
 copy_to_repo private 304-Offload_CCE
-copy_to_repo private 305-Porting_to_GPU
 copy_to_repo private 306-Debugging_at_Scale
 
 copy_to_repo private 401-Introduction_to_Perftools
 copy_to_repo private 402-Performance_Optimization_Improving_Single_Core
 copy_to_repo private 403-Advanced_Performance_Analysis
 copy_to_repo private 404-Cray_MPI_on_Slingshot
+copy_to_repo private E404-Cray_MPI_on_Slingshot
 
-copy_to_repo private 501-Introduction_to_Python_on_Cray_EX
+copy_to_repo private 501-Porting_to_GPU
+copy_to_repo private 502-Introduction_to_Python_on_Cray_EX
 copy_to_repo private 503-IO_Optimization_Parallel_IO
 
 #
@@ -100,9 +102,9 @@ echo -e "\nProcessing AMD materials..."
 copy_to_repo public 305-Introduction_to_AMD_ROCm_Ecosystem
 copy_to_repo public 405-AMD_ROCgdb_Debugger
 copy_to_repo public 406-Introduction_to_Rocprof_Profiling_Tool
-copy_to_repo public 503-AMD_Omnitrace
-copy_to_repo public 504-AMD_Omniperf
-copy_to_repo public 505-Best_Practices_GPU_Optimization
+copy_to_repo public 504-AMD_Omnitrace
+copy_to_repo public 505-AMD_Omniperf
+copy_to_repo public 506-Best_Practices_GPU_Optimization
 
 #
 # LUST stuff
@@ -127,3 +129,4 @@ copy_to_repo public 203-Lustre
 copy_to_repo public 204-ObjectStorage
 copy_to_repo public 205-Containers
 copy_to_repo public I202-WhatElse
+copy_to_repo public I301-IntroductionCoursePart2
