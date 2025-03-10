@@ -9,9 +9,9 @@ EXERCISES="Exercises"
 
 # Additional variables
 # - Add overwrites for lumi_c.sh and lumi_g.sh in exercises/HPE
-overwrite=0
+overwrite=1
 # - Pack the exercises in a tar file for HPE and one for AMD
-pack_exercises=0
+pack_exercises=1
 
 training="${PWD##*/LUMI-training-lumio/courses/}"
 if [[ "$training" == "$PWD" ]]
@@ -65,17 +65,17 @@ touch -r ../../../$EXERCISES/HPE/lumi_g.sh lumi_g_after.sh
 
 popd
 
-mkdir -p overwrite/$EXERCISES/HPE/day4/VH1-io
-pushd overwrite/$EXERCISES/HPE/day4/VH1-io
+mkdir -p overwrite/$EXERCISES/HPE/day3/VH1-io
+pushd overwrite/$EXERCISES/HPE/day3/VH1-io
 
-gtar -xf ../../../../../$EXERCISES/HPE/day4/VH1-io/VH1-io.tar
+gtar -xf ../../../../../$EXERCISES/HPE/day3/VH1-io/VH1-io.tar
 sed -e 's/-s \${STRIPE_SIZE}/-S \${STRIPE_SIZE}/' -i '' VH1-io/README
 gtar -cf VH1-io.tar VH1-io
 /bin/rm -rf VH1-io
 
 # Need to set the timestamp of the file as otherwise we'll get
 # a different tar file everytime the script runs.
-touch -r ../../../../../$EXERCISES/HPE/day4/VH1-io/VH1-io.tar VH1-io.tar
+touch -r ../../../../../$EXERCISES/HPE/day3/VH1-io/VH1-io.tar VH1-io.tar
 
 popd
 
