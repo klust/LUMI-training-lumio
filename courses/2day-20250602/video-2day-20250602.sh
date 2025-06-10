@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Adapt the next one by hand!
-videodir="/Users/klust/Projects/LUMI-Videoprocessing/20250602-2day-Espoo20250602-2day-Espoo/Rendered"
+videodir="/Users/klust/Projects/LUMI-Videoprocessing/20250602-2day-Espoo/Rendered"
 
 training="${PWD##*/LUMI-training-lumio/courses/}"
 if [[ "$training" == "$PWD" ]]
