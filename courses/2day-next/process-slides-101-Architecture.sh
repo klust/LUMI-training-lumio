@@ -1,31 +1,24 @@
 #! /usr/bin/env bash
 
 # Some variables.
-slidestack="LUMI-2day-next-03-Access"
+slidestack="LUMI-2day-next-101-Architecture"
 
 slidealias=( \
     "Title" \
-    "EuroHPCSupercomputers" \
-    "WhoPays" \
-    "ProjectsUsers_1" \
-    "ProjectsUsers_2" \
-    "ProjectManagement" \
-    "FileSpacesUser" \
-    "FileSpacesProject" \
-    "FileSpacesQuota" \
-    "FileSpacesFurtherInfo" \
-    "Access" \
-    "OpenOnDemand_01" \
-    "OpenOnDemand_02" \
-    "OpenOnDemand_03" \
-    "OpenOnDemand_04" \
-    "OpenOnDemand_05" \
-    "OpenOnDemand_06" \
-    "OpenOnDemand_07" \
-    "OpenOnDemand_08" \
-    "OpenOnDemand_09" \
-    "OpenOnDemand_10" \
-    "DataTransfer" \
+    "WhyKnow" \
+    "LUMIIs" \
+    "LUMISpecs" \
+    "AMDMilanCCD" \
+    "AMDMilanCPU" \
+    "AMDMilanNode" \
+    "AMDMilanHierarchy" \
+    "AMDMilanDelays" \
+    "GPUnodeConcept"\
+    "GPUnodeReal" \
+    "GPUnodeFuture" \
+    "Slingshot" \
+    "AssemblyEX" \
+    "AssemblyLUMI" \
     "Questions" \
 )
 

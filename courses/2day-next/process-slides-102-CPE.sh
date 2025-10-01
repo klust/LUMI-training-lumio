@@ -1,24 +1,31 @@
 #! /usr/bin/env bash
 
 # Some variables.
-slidestack="LUMI-2day-next-01-Architecture"
+slidestack="LUMI-2day-next-102-CPE"
 
 slidealias=( \
     "Title" \
     "WhyKnow" \
-    "LUMIIs" \
-    "LUMISpecs" \
-    "AMDMilanCCD" \
-    "AMDMilanCPU" \
-    "AMDMilanNode" \
-    "AMDMilanHierarchy" \
-    "AMDMilanDelays" \
-    "GPUnodeConcept"\
-    "GPUnodeReal" \
-    "GPUnodeFuture" \
-    "Slingshot" \
-    "AssemblyEX" \
-    "AssemblyLUMI" \
+    "OperatingSystem" \
+    "LowNoiseMode" \
+    "ProgrammingModels" \
+    "DevelopmentEnvironment" \
+    "AMDTools" \
+    "CrayCompilingEnv" \
+    "ScientificLibraries" \
+    "CrayMPI" \
+    "CrayMPIGPU" \
+    "Lmod" \
+    "CompilerWrappers" \
+    "SelectingCPEVersion" \
+    "TargetModules" \
+    "PrgEnvCompilerModules" \
+    "GettingHelp" \
+    "ChatGPT" \
+    "OtherModules" \
+    "WarningLibraryPath" \
+    "WarningOrderMatters" \
+    "NoteWrappers" \
     "Questions" \
 )
 
