@@ -8,6 +8,7 @@ slidealias=( \
     "ContainersIntro" \
     "ContainersNotProvide" \
     "ContainersCanDoOnLUMI" \
+    "ContainersStoragePython" \
     "ContainersManaging_1" \
     "ContainersExamplePull_1" \
     "ContainersExamplePull_2" \
