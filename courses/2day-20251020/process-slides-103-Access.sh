@@ -1,31 +1,32 @@
 #! /usr/bin/env bash
 
 # Some variables.
-slidestack="LUMI-2day-next-02-CPE"
+slidestack="LUMI-2day-20251020-103-Access"
 
 slidealias=( \
     "Title" \
-    "WhyKnow" \
-    "OperatingSystem" \
-    "LowNoiseMode" \
-    "ProgrammingModels" \
-    "DevelopmentEnvironment" \
-    "AMDTools" \
-    "CrayCompilingEnv" \
-    "ScientificLibraries" \
-    "CrayMPI" \
-    "CrayMPIGPU" \
-    "Lmod" \
-    "CompilerWrappers" \
-    "SelectingCPEVersion" \
-    "TargetModules" \
-    "PrgEnvCompilerModules" \
-    "GettingHelp" \
-    "ChatGPT" \
-    "OtherModules" \
-    "WarningLibraryPath" \
-    "WarningOrderMatters" \
-    "NoteWrappers" \
+    "EuroHPCSupercomputers" \
+    "WhoPays" \
+    "ProjectsUsers_1" \
+    "ProjectsUsers_2" \
+    "ProjectManagement" \
+    "FileSpacesUser" \
+    "FileSpacesProject1" \
+    "FileSpacesProject2" \
+    "FileSpacesQuota" \
+    "FileSpacesFurtherInfo" \
+    "Access" \
+    "OpenOnDemand_01" \
+    "OpenOnDemand_02" \
+    "OpenOnDemand_03" \
+    "OpenOnDemand_04" \
+    "OpenOnDemand_05" \
+    "OpenOnDemand_06" \
+    "OpenOnDemand_07" \
+    "OpenOnDemand_08" \
+    "OpenOnDemand_09" \
+    "OpenOnDemand_10" \
+    "DataTransfer" \
     "Questions" \
 )
 

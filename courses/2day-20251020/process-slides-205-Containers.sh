@@ -1,13 +1,14 @@
 #! /usr/bin/env bash
 
 # Some variables.
-slidestack="LUMI-2day-next-11-Containers"
+slidestack="LUMI-2day-20251020-205-Containers"
 
 slidealias=( \
     "Title" \
     "ContainersIntro" \
     "ContainersNotProvide" \
     "ContainersCanDoOnLUMI" \
+    "ContainersStoragePython" \
     "ContainersManaging_1" \
     "ContainersExamplePull_1" \
     "ContainersExamplePull_2" \
@@ -29,6 +30,7 @@ slidealias=( \
     "ContainersExampleWrapper_4" \
     "ContainersExampleWrapper_5" \
     "ContainersExampleWrapper_6" \
+    "ContainersEnvironmentEnhancement_3" \
     "ContainersPrebuiltAI" \
     "RunningAiComplicated" \
     "RunningAIEasyBuild_1" \

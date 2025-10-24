@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Some variables.
-slidestack="LUMI-2day-next-08-Binding"
+slidestack="LUMI-2day-20251020-202-Binding"
 
 slidealias=( \
     "Title" \
@@ -14,11 +14,14 @@ slidealias=( \
     "GPUNumberingRemarks" \
     "SlurmTaskDistribution_1" \
     "SlurmTaskDistribution_2" \
-    "SlurmTaskCPU" \
+    "SlurmTaskDistribution_3" \
+    "SlurmTaskCPUWhy" \
+    "SlurmTaskCPUHow" \
     "SlurmTaskCPUMasks" \
     "SlurmTaskCPUExamples" \
     "SlurmTaskGPU" \
-    "MPICHRankRedistribution" \
+    "MPICHRankRedistribution1" \
+    "MPICHRankRedistribution2" \
     "MPICHNICSelection" \
     "OpenMPBinding" \
     "OpenMPBindingPlaces" \
