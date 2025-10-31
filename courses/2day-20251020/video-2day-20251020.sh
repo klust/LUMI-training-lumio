@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Adapt the next one by hand!
-videodir="/Users/klust/Projects/LUMI-Videoprocessing/20251020-2day-Espoo/Rendered"
+videodir="/Users/klust/Projects/LUMI-Videoprocessing/20251020-2day-Tallinn/Rendered"
 
 training="${PWD##*/LUMI-training-lumio/courses/}"
 if [[ "$training" == "$PWD" ]]
@@ -31,7 +31,7 @@ function copy_to_repo {
 
     full_source="$videodir/$video.mp4"
     full_dest_dir="$rootdir/$repo/$training/recordings"
-    full_dest="$full_dest_dir/$video.mp4"
+    full_dest="$full_dest_dir/LUMI-$training-$video.mp4"
 
     if [ -f "$full_source" ]
     then
@@ -83,7 +83,7 @@ echo -e "\nProcessing LUST materials..."
 copy_to_repo public I101-Introduction
 copy_to_repo public 101-Architecture
 copy_to_repo public 102-CPE
-copy_to_repo public 103-Access
+#copy_to_repo public 103-Access
 copy_to_repo public 104-Modules
 copy_to_repo public 105-SoftwareStacks
 copy_to_repo public 106-Support

@@ -7,7 +7,7 @@ then
     exit
 fi
 
-videodir="/Users/klust/Projects/LUMI-Videoprocessing/$training/Rendered"
+videodir="/Users/klust/Projects/LUMI-Videoprocessing/20251022-paow-Tallinn/Rendered"
 
 curdir=$PWD
 cd ../..
@@ -30,7 +30,7 @@ function copy_to_repo {
 
     full_source="$videodir/$video.mp4"
     full_dest_dir="$rootdir/$repo/$training/recordings"
-    full_dest="$full_dest_dir/$video.mp4"
+    full_dest="$full_dest_dir/LUMI-$training-$video.mp4"
 
     if [ -f "$full_source" ]
     then
@@ -77,15 +77,13 @@ function copy_to_repo {
 
 copy_to_repo public  1_00_Course_Introduction
 copy_to_repo private 1_01_HPE_PE
-copy_to_repo private E1_01_HPE_PE
-copy_to_repo private 1_02_Perftools
-copy_to_repo private 1_03_PerformanceOptimization
-copy_to_repo private 1_04_ApplicationPlacement
-copy_to_repo private 1_05_PerformanceAnalysisAtWork_1
-copy_to_repo private 1_06_PerformanceAnalysisAtWork_2
-copy_to_repo public  2_01_AMD_tools_1
-copy_to_repo public  2_02_AMD_tools_2
-copy_to_repo private 2_03_MPI
-copy_to_repo private E2_03_MPI
-copy_to_repo private 2_04_IO
-copy_to_repo private E2_04_IO
+copy_to_repo private 1_02_Compilers
+copy_to_repo private 1_03_Perftools  # Sound issues during the Apprentice demo
+copy_to_repo private 1_04_AdvancedPerformanceAnalysis
+copy_to_repo private 2_01_MPI
+copy_to_repo private 2_02_IO
+copy_to_repo public  2_03a_AMD_tools_1a_ROCm
+copy_to_repo public  2_03b_AMD_tools_1b_rocprof
+copy_to_repo public  2_04a_AMD_tools_2a_omnitrace
+copy_to_repo public  2_04b_AMD_tools_2b_omniperf
+copy_to_repo public  3_01-Best_Practices_GPU_Optimization
