@@ -1,13 +1,14 @@
 #! /usr/bin/env bash
 
 # Some variables.
-slidestack="LUMI-2day-20251020-202-Binding"
+slidestack="LUMI-2day-20260422-202-Binding"
 
 slidealias=( \
     "Title" \
     "WhatAbout" \
     "WhenDone" \
     "WhyNeedThis" \
+    "CheckBindings" \
     "CoreNumbering" \
     "GPUNumbering_1" \
     "GPUNumbering_2" \
