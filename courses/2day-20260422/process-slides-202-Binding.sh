@@ -20,7 +20,8 @@ slidealias=( \
     "SlurmTaskCPUHow" \
     "SlurmTaskCPUMasks" \
     "SlurmTaskCPUExamples" \
-    "SlurmTaskGPU" \
+    "SlurmTaskGPU_1" \
+    "SlurmTaskGPU_2" \
     "MPICHRankRedistribution1" \
     "MPICHRankRedistribution2" \
     "MPICHNICSelection" \
