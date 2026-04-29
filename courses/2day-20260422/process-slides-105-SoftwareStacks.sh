@@ -42,12 +42,8 @@ slidealias=( \
     "EasyBuildAdvanced_3" \
     "EasyBuildTipsTricks" \
     "EasyBuildTraining" \
+    "DocsLocalStacks" \
     "Questions" \
-#    "QuestionEESSI_1" \
-#    "QuestionEESSI_2" \
-#    "QuestionEESSI_3" \
-#    "QuestionEESSI_4" \
-#    "QuestionEnd" \
 )
 
 #

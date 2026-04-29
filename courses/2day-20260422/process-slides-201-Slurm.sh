@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Some variables.
-slidestack="LUMI-2day-20251020-201-Slurm"
+slidestack="LUMI-2day-20260422-201-Slurm"
 
 slidealias=( \
     "Title" \
@@ -12,8 +12,6 @@ slidealias=( \
     "BatchScript" \
     "Partitions_1" \
     "Partitions_2" \
-    "PartitionsPerNode" \
-    "PartitionsByResources" \
     "PartitionsCommands" \
     "PartitionsCommandsSinfo" \
     "Accounting" \
@@ -53,6 +51,7 @@ slidealias=( \
     "HeterogeneousJobs" \
     "HeterogeneousJobsExampleSBATCH" \
     "HeterogeneousJobsExampleSrun" \
+    "Multiprog" \
     "SimultaneousJobSteps" \
     "MonitoringSstat_1" \
     "MonitoringSstat_2" \

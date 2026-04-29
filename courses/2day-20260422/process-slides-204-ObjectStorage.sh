@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Some variables.
-slidestack="LUMI-2day-20251020-204-ObjectStorage"
+slidestack="LUMI-2day-20260422-204-ObjectStorage"
 
 slidealias=( \
     "Title" \

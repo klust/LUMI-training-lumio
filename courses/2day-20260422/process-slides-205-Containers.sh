@@ -33,6 +33,7 @@ slidealias=( \
     "ContainersExampleWrapper_5" \
     "ContainersExampleWrapper_6" \
     "ContainersEnvironmentEnhancement_4" \
+    "ContainersEnvironmentEnhancement_5" \
     "ContainersExtendVenv" \
     "ContainersExtendVenvDemo1" \
     "ContainersExtendVenvDemo2" \

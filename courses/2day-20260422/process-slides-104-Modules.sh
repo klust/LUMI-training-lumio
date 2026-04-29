@@ -27,10 +27,6 @@ slidealias=( \
     "ModuleSpiderGnuplotVersion_2" \
     "ModuleSpiderExtensions" \
     "ModuleSpiderCMake1" \
-    "ModuleSpiderCMake2" \
-    "ModuleSpiderCMake3" \
-    "ModuleSpiderCMake4" \
-    "ModuleSpiderCMake5" \
     "ModuleSpiderCMakeVersion_1" \
     "ModuleKeyword" \
     "ModuleKeywordEditor_1" \
