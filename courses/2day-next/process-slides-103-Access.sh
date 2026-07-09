@@ -9,7 +9,8 @@ slidealias=( \
     "WhoPays" \
     "ProjectsUsers_1" \
     "ProjectsUsers_2" \
-    "ProjectManagement" \
+    "ProjectManagement1" \
+    "ProjectManagement2" \
     "FileSpacesUser" \
     "FileSpacesProject1" \
     "FileSpacesProject2" \
