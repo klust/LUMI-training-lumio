@@ -33,6 +33,11 @@ slidealias=( \
     "EasyBuildToolchainLUMIAI" \
     "EasyConfigModuleNames" \
     "Section03" \
+    "EasyConfigIntroParameters" \
+    "EasyConfigIntoLibpng1" \
+    "EasyConfigIntoLibpng2" \
+    "EasyConfigIntoLibpng2" \
+    "EasyConfigEasyBlockOrEasyConfig" \
     "Questions" \
 )
 
