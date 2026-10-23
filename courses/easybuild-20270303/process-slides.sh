@@ -44,6 +44,7 @@ slidealias=( \
     "EasyConfigNameVersion" \
     "EasyConfigHelp1" \
     "EasyConfigHelp2" \
+    "EasyConfigHelp3" \
     "Questions" \
 )
 
