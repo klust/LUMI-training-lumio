@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # ID of the training project on LUMI.
-projectid="465003355"
+projectid="465003358"
 
 # Subdirectories as these have not been consistent across courses
 SLIDES="Slides"
@@ -9,9 +9,9 @@ EXERCISES="Exercises"
 
 # Additional variables
 # - Add overwrites for lumi_c.sh and lumi_g.sh in exercises/HPE
-overwrite=1
+overwrite=0
 # - Pack the exercises in a tar file for HPE and one for AMD
-pack_exercises=1
+pack_exercises=0
 
 # Programs
 GNUTAR=tar
@@ -192,8 +192,10 @@ function copy_to_repo {
 echo -e "\nProcessing HPE materials..."
 
 # Temporary - to delete after the course
-#copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                "LUMI-$training-Exercises_HPE.pdf"
+copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                "LUMI-$training-Exercises_HPE.pdf"
+copy_to_repo public  "$EXERCISES/HPE/day1/ProgrammingModels/ProgrammingModelExamples_SLURM.pdf" "LUMI-$training-E-2-03-ProgrammingModelExamples_SLURM.pdf"
 
+# Permanent
 copy_to_repo private "$SLIDES/HPE/01_Architecture_PE_modules_slurm.pdf"         "LUMI-$training-1_01_Architecture_PE_modules_slurm.pdf"
 copy_to_repo private "$SLIDES/HPE/02_Compilers.pdf"                             "LUMI-$training-1_02_Compilers_Libraries.pdf"
 copy_to_repo private "$SLIDES/HPE/03_introduction_to_perftools.pdf"             "LUMI-$training-1_03_introduction_to_perftools.pdf"
