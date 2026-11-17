@@ -9,9 +9,9 @@ EXERCISES="Exercises"
 
 # Additional variables
 # - Add overwrites for lumi_c.sh and lumi_g.sh in exercises/HPE
-overwrite=0
+overwrite=1
 # - Pack the exercises in a tar file for HPE and one for AMD
-pack_exercises=0
+pack_exercises=1
 
 # Programs
 GNUTAR=tar
@@ -192,8 +192,8 @@ function copy_to_repo {
 echo -e "\nProcessing HPE materials..."
 
 # Temporary - to delete after the course
-copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                "LUMI-$training-Exercises_HPE.pdf"
-copy_to_repo public  "$EXERCISES/HPE/day1/ProgrammingModels/ProgrammingModelExamples_SLURM.pdf" "LUMI-$training-E-2-03-ProgrammingModelExamples_SLURM.pdf"
+#copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                "LUMI-$training-Exercises_HPE.pdf"
+#copy_to_repo public  "$EXERCISES/HPE/day1/ProgrammingModels/ProgrammingModelExamples_SLURM.pdf" "LUMI-$training-E-2-03-ProgrammingModelExamples_SLURM.pdf"
 
 # Permanent
 copy_to_repo private "$SLIDES/HPE/01_Architecture_PE_modules_slurm.pdf"         "LUMI-$training-1_01_Architecture_PE_modules_slurm.pdf"
@@ -204,8 +204,8 @@ copy_to_repo private "$SLIDES/HPE/05_demo.pdf"                                  
 copy_to_repo private "$SLIDES/HPE/06_cray_mpi_short.pdf"                        "LUMI-$training-2_01_cray_mpi.pdf"
 copy_to_repo private "$SLIDES/HPE/07_IO_short_LUMI.pdf"                         "LUMI-$training-2_02_IO_LUMI.pdf"
 
-copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                "LUMI-$training-Exercises_HPE.pdf"
-#copy_to_repo private "$SLIDES/HPE/Exercises.pdf"                                "LUMI-$training-Exercises_HPE.pdf"
+#copy_to_repo public  "$SLIDES/HPE/Exercises.pdf"                                "LUMI-$training-Exercises_HPE.pdf"
+copy_to_repo private "$SLIDES/HPE/Exercises.pdf"                                "LUMI-$training-Exercises_HPE.pdf"
 copy_to_repo private "exercises_HPE.tar"                                        "LUMI-$training-Exercises_HPE.tar"
 copy_to_repo private "exercises_HPE.tar.bz2"                                    "LUMI-$training-Exercises_HPE.tar.bz2"
 

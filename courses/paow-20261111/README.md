@@ -7,3 +7,7 @@
 
 -   `video-paow-20240611.sh`: Get the videos from the video processing directory on my local
     computer and put them in the right place for pushing to LUMI-O.
+
+## Other remarks
+
+-   Download the HackMD markdown via [https://hackmd.io/@sfantao/lumi-training-cph-2026/download](https://hackmd.io/@sfantao/lumi-training-cph-2026/download), i.e., the URL of the page + `/download`.
