@@ -4,12 +4,12 @@
 # projectid="465002757" # Not used here as we don't get the materials from the training project anymore
 
 # Subdirectories as these have not been consistent across courses
-SLIDES="slides"
+SLIDES="2026-11 AI workshop"
 #EXERCISES="Exercises"
 # Additional variables
 # - Pack the exercises in a tar file
 #   This requires that the GitHub tag is made.
-pack_exercises=1
+pack_exercises=01
 training_tag=20261125
 
 #
@@ -105,7 +105,7 @@ function copy_to_repo {
         fi
 
     else
-        echo "- Source file '$source' does not (yet) exist"
+        echo "- Source file '$full_source' does not (yet) exist"
     fi
 
 
@@ -117,7 +117,7 @@ function copy_to_repo {
 
 echo -e "\nProcessing materials..."
 
-copy_to_repo public "$SLIDES/01_Introduction_to_LUMI/0-lumi-pre-intro.pptx"                                                                   "LUMI-$training-00-Course_Introduction.pdf"
+copy_to_repo public "$SLIDES/01_Introduction_to_LUMI/0-lumi-pre-intro-1.pdf"                                                                  "LUMI-$training-00-Course_Introduction.pdf"
 copy_to_repo public "$SLIDES/01_Introduction_to_LUMI/1-lumi-intro.pdf"                                                                        "LUMI-$training-01-Lumi_intro.pdf"
 copy_to_repo public "$SLIDES/02_Using_the_LUMI_web-interface/Using LUMI web UI.pdf"                                                           "LUMI-$training-02-Using_LUMI_web_UI.pdf"
 copy_to_repo public "$SLIDES/03_Your_first_AI_training_job_on_LUMI/First AI job on LUMI.pdf"                                                  "LUMI-$training-03-First_AI_job.pdf"
@@ -126,7 +126,7 @@ copy_to_repo public "$SLIDES/05_Running_containers_on_LUMI/5-Running_containers_
 copy_to_repo public "$SLIDES/06_Bulding_containers_from_conda_pip_environments/6-Building_containers_from_conda_pip_environments_06_2026.pdf" "LUMI-$training-06-Building_containers_from_conda_pip_environments.pdf"
 copy_to_repo public "$SLIDES/07_Extending_containers_with_virtual_environments_for_faster_testing/LUMI_07_virtual_environments.pdf"           "LUMI-$training-07-Extending_containers.pdf"
 copy_to_repo public "$SLIDES/08_Scaling_to_multiple_GPUs/Scaling AI to multiple GPUs.pdf"                                                     "LUMI-$training-08-Scaling_multiple_GPUs.pdf"
-copy_to_repo public "$SLIDES/09_Extreme_scale_AI/Session-09- Extreme scale AI training on LUMI.pdf"                                          "LUMI-$training-09-Extreme_scale_AI.pdf"
+copy_to_repo public "$SLIDES/09_Extreme_scale_AI/Session-09- Extreme scale AI training on LUMI.pdf"                                           "LUMI-$training-09-Extreme_scale_AI.pdf"
 copy_to_repo public "$SLIDES/09b_Loading_training_data/Training_Data_on_LUMI.pdf"                                                             "LUMI-$training-10-Training_Data_on_LUMI.pdf"
 copy_to_repo public "$SLIDES/10_Coupling_AI_and_Simulation/Coupling_Simulation_and_AI.pdf"                                                    "LUMI-$training-11-Coupling_Simulation_and_AI.pdf"
 
